@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_ts_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rl_ts_topbar"
+        android:background="#DDE5FB" >
+
+        <TextView
+            android:id="@+id/tv_ts_studentname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="Name"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:id="@+id/tv_ts_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="65dp"
+            android:layout_toLeftOf="@+id/tv_ts_level"
+            android:text="Age"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:id="@+id/tv_ts_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="95dp"
+            android:layout_toLeftOf="@+id/tv_ts_sched_level"
+            android:text="Level"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:id="@+id/tv_ts_sched_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="40dp"
+            android:layout_toLeftOf="@+id/tv_ts_lessonname"
+            android:text="Sch. Level"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textColor="@color/texts1" />
+
+        <!--
+              <TextView
+            android:id="@+id/tv_ts_wbr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+			android:layout_centerVertical="true"
+            android:textColor="@color/texts1"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:layout_toLeftOf="@+id/tv_ts_lessonname"
+            android:text="  W   B    R" />
+        -->
+
+        <TextView
+            android:id="@+id/tv_ts_present"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="40dp"
+            android:text="Attendance"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:id="@+id/tv_ts_cls_lvl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="35dp"
+            android:layout_toLeftOf="@+id/tv_ts_present"
+            android:text="Cls/Lvl"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textColor="@color/texts1"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_ts_paid_cls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/tv_ts_cls_lvl"
+            android:text="Paid Cls"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textColor="@color/texts1"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_ts_lessonname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/tv_ts_paid_cls"
+            android:text="Cls"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textColor="@color/texts1" />
+    </RelativeLayout> 
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white"
+            android:choiceMode="none"
+            android:focusable="true"
+            android:visibility="visible" >
+        </ListView>
+
+        <TextView
+            android:id="@+id/tv_view_current_lesson_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="ABC"
+            android:textColor="@color/texts1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_send_att"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp"
+        android:background="@drawable/button_orange_selector"
+        android:paddingBottom="10dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="10dp"
+        android:text="Send Attendance"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+</LinearLayout>

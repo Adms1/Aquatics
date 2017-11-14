@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:orientation="vertical" >
+ 
+    <TextView 
+     android:id="@+id/tv_edit_folder_name"
+     android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/texts1"
+        android:layout_marginTop="10dp"
+        android:text="Move in"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+    
+    
+	<Button 
+	    android:id="@+id/btn_dialog_folder_list"
+	    android:layout_marginTop="10dp"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center_horizontal"
+	    android:textColor="@color/texts1"
+	    android:paddingLeft="5dp"
+	    android:gravity="left|center_vertical"
+	    android:background="@drawable/dialog_dropdown"/>    
+	
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal"
+		    android:layout_marginTop="10dp"
+		    android:layout_marginBottom="10dp" >
+	
+		    <Button
+		        android:id="@+id/btn_dialog_folder_ok"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:textColor="@color/white"
+		        android:background="@color/pink"
+		        android:text="Move"
+		        android:layout_marginRight="5dp"
+		        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+	
+		    <Button
+		        android:id="@+id/btn_dialog_folder_cancel"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="Cancel"
+		        android:background="@color/pink"
+		        android:textColor="@color/white"
+		        android:layout_marginLeft="5dp"
+		        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+		</LinearLayout>
+	
+					 
+					
+                    
+                        
+</LinearLayout>

@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:id="@+id/action_delete"
+          android:icon="@drawable/ic_content_discard"
+          android:title="Delete"
+          android:showAsAction="always"/>
+
+    <item android:id="@+id/action_make_unread"
+          android:icon="@drawable/ic_content_unread"
+          android:title="Make Unread"
+          android:showAsAction="always"/>
+    
+    <item android:id="@+id/action_move_to"
+          android:icon="@drawable/ic_move_to"
+          android:title="Move To"
+          android:orderInCategory="11111"
+          android:showAsAction="always">
+    <menu>
+        <item 
+            android:id="@+id/action_from_old_folder"
+            android:icon="@drawable/ic_action_labels"
+            android:title="In existing"
+            android:showAsAction="never"/>
+          <item android:id="@+id/action_new_folder"
+	          android:icon="@drawable/ic_action_new_label"
+	          android:title="New folder"
+	          android:showAsAction="never" />
+	</menu>
+    </item>
+</menu>

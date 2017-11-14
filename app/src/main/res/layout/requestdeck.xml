@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/deck_background"
+     >
+
+    <TextView
+        android:id="@+id/tv_rc_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#5481E6"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="Request Deck Assist" />
+<ScrollView 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:layout_below="@+id/tv_rc_title">
+     
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+        <CheckBox 
+            android:id="@+id/chk_cee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox_selection"
+            android:textColor="@color/cee"
+            android:paddingLeft="10dp"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="CEE"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/chk_cee_manager"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@drawable/checkbox_selection"
+                android:paddingLeft="10dp"
+                android:text="CEE Manager"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textColor="@color/cee" />
+
+            <CheckBox
+                android:id="@+id/chk_aquatics_manager"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@drawable/checkbox_selection"
+                android:paddingLeft="10dp"
+                android:text="Aquatics Manager"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textColor="@color/aquatics" />
+        </LinearLayout>
+        
+		<TextView
+		    android:id="@+id/tv_rc_assistance"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+		    android:textStyle="bold"
+		    android:layout_marginTop="20dp"
+		    android:layout_marginLeft="10dp"
+		    android:textColor="@color/texts1"
+		    android:text="I need Assistance" />
+		<LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginLeft="10dp"
+		    android:orientation="horizontal">
+			<RadioButton
+	            android:id="@+id/rc_now"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textColor="@color/texts1"
+	            android:gravity="center_vertical"
+	            android:textSize="18sp"
+	            android:text="Now" />
+			
+			<RadioButton
+	            android:id="@+id/rc_min"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@+id/tv_rc_assistance"
+				android:layout_toRightOf="@+id/rc_now"
+	            android:textColor="@color/texts1"
+	            android:gravity="center_vertical"
+	            android:layout_marginLeft="40dp"
+	            android:textSize="18sp"
+	            android:text="10 Minutes" />
+        </LinearLayout>
+        <TextView
+		    android:id="@+id/tv_rc_where"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginLeft="10dp"
+		    android:layout_marginTop="10dp"
+		    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+		    android:textStyle="bold"
+		    android:textColor="@color/texts1"
+		    android:text="I am in pool" />
+		
+		<LinearLayout
+            android:id="@+id/ll_pool_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal" />
+		<Button
+            android:id="@+id/btn_rc_send_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="40dp"
+			android:paddingRight="40dp"
+			android:paddingTop="10dp"
+			android:paddingBottom="10dp"
+			android:textColor="@color/white"
+			android:textStyle="bold"
+			android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+			android:text="Send Request"
+            android:background="#F26075" />
+    </LinearLayout>
+	</ScrollView>
+    
+<!-- 
+        <RadioButton
+            android:id="@+id/rb_cee"
+            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_rc_title"
+        android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/cee"
+            android:text="CEE" />
+
+        <RadioButton
+            android:id="@+id/rb_cee_manager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rb_cee"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentLeft="true"
+            android:textSize="18sp"
+            android:textColor="@color/cee"
+            android:text="CEE Manager" />
+
+    <RadioButton
+    android:id="@+id/rb_rc_aquatics_manager"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:layout_toRightOf="@+id/tv_rc_or"
+    android:textSize="18sp"
+    android:layout_marginLeft="30dp"
+    android:layout_above="@+id/tv_rc_or"
+	android:textColor="@color/aquatics"
+    android:text="Aquatics Manager" />
+<RelativeLayout 
+    android:id="@+id/rl_rc_or"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_below="@+id/rg_any_cee">
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_toLeftOf="@+id/tv_rc_or"        
+android:layout_below="@+id/rb_cee_manager"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="9dp"
+        android:src="@drawable/line" />
+    <TextView
+        android:id="@+id/tv_rc_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:layout_below="@+id/rb_cee_manager"
+        android:textColor="@color/texts1"
+        android:gravity="center_vertical"
+        android:text="OR" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_below="@+id/rb_cee_manager"
+		android:layout_toRightOf="@+id/tv_rc_or"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="9dp"
+        android:src="@drawable/line" />
+
+    </RelativeLayout>
+
+<TextView
+    android:id="@+id/tv_rc_cee_staff"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/tv_rc_or"
+    android:layout_marginLeft="20dp"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:textColor="@color/texts1"
+    android:text="CEE Staff" />
+
+<Button
+    android:id="@+id/et_rc_cee_staff"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+	android:layout_marginLeft="20dp"
+	android:layout_alignRight="@+id/imageView1"
+	android:textSize="18sp"
+	android:gravity="left|center_vertical"
+	android:layout_marginRight="50dp"
+	android:paddingLeft="5dp"
+    android:textColor="@color/texts1"
+    android:background="@drawable/dropbox1"
+    android:layout_below="@+id/tv_rc_cee_staff" />
+
+<TextView
+    android:id="@+id/tv_rc_cee_manager"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/et_rc_cee_staff"
+    android:layout_marginLeft="20dp"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:textColor="@color/texts1"
+    android:text="CEE Manager" />
+<Button
+    android:id="@+id/et_rc_cee_manager"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+	android:layout_marginLeft="20dp"
+	android:textSize="18sp"
+    android:enabled="true"
+    android:layout_alignRight="@+id/imageView1"
+    android:layout_marginRight="50dp"
+    android:clickable="true"
+    android:gravity="left|center_vertical"
+    android:paddingLeft="5dp"
+    android:textColor="@color/texts1"
+    android:background="@drawable/dropbox1"
+    android:layout_below="@+id/tv_rc_cee_manager" />
+
+
+<TextView
+    android:id="@+id/tv_rc_aquatics_manager"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/tv_rc_or"
+	android:layout_alignLeft="@+id/rb_rc_aquatics_manager"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:textColor="@color/texts1"
+    android:text="Aquatics Manager" />
+<Button
+    android:id="@+id/et_rc_aquatics_manager"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:layout_alignLeft="@+id/rb_rc_aquatics_manager"
+    android:textSize="18sp"
+    android:enabled="true"
+    android:clickable="true"
+    android:gravity="left|center_vertical"
+    android:paddingLeft="5dp"
+    android:layout_alignRight="@+id/imageView2"
+    android:layout_marginRight="50dp"
+    android:textColor="@color/texts1"
+    android:background="@drawable/dropbox1"
+    android:layout_below="@+id/tv_rc_aquatics_manager" />
+
+<TextView
+    android:id="@+id/tv_rc_where"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/et_rc_cee_manager"
+    android:layout_marginLeft="20dp"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:textColor="@color/texts1"
+    android:text="I am in pool" />
+
+	<LinearLayout
+            android:id="@+id/ll_pool_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+			android:layout_below="@+id/tv_rc_where"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal" >
+        </LinearLayout>
+<RadioButton
+            android:id="@+id/rc_pool1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_rc_where"
+			android:layout_alignParentLeft="true"
+			android:layout_marginLeft="20dp"
+            android:textColor="@color/texts1"
+            android:gravity="center_vertical"
+            android:textSize="24sp"
+            android:text="Pool 1" /> 
+        
+        <RadioButton
+            android:id="@+id/rc_pool2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_rc_where"
+			android:layout_toRightOf="@+id/rc_pool1"
+            android:textColor="@color/texts1"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textSize="24sp"
+            android:text="Pool 2" /> 
+            
+        <RadioButton
+            android:id="@+id/rc_pool3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_rc_where"
+            android:layout_toRightOf="@+id/rc_pool2"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/texts1"
+            android:textSize="24sp"
+            android:text="Pool 3" /> 
+        
+        
+        <RadioButton
+            android:id="@+id/rc_pool4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+ 			android:layout_below="@+id/rc_pool1"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+			android:layout_alignParentLeft="true"
+            android:textColor="@color/texts1"
+            android:textSize="24sp"
+            android:text="Pool 4" /> 
+        
+        <RadioButton
+            android:id="@+id/rc_pool5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rc_pool2"
+            android:gravity="center_vertical"
+ 			android:layout_toRightOf="@+id/rc_pool4"
+ 			android:layout_marginLeft="10dp"
+            android:textColor="@color/texts1"
+            android:textSize="24sp"
+            android:text="Pool 5" />
+        <RadioButton
+            android:id="@+id/rc_pool6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rc_pool3"
+ 			android:layout_toRightOf="@+id/rc_pool5"
+			android:layout_marginLeft="10dp"
+            android:textColor="@color/texts1"
+            android:gravity="center_vertical"
+            android:textSize="24sp"
+            android:text="Pool 6" />
+            
+    <TextView
+    android:id="@+id/tv_rc_assistance"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+android:layout_alignLeft="@+id/rb_rc_aquatics_manager"
+    android:layout_below="@+id/et_rc_aquatics_manager"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:layout_marginTop="5dp"
+    android:textColor="@color/texts1"
+    android:text="I need Assistance" />
+<RadioButton
+            android:id="@+id/rc_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_rc_assistance"
+            android:textColor="@color/texts1"
+            android:layout_alignLeft="@+id/rb_rc_aquatics_manager"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:text="Now" />
+<RadioButton
+            android:id="@+id/rc_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_rc_assistance"
+			android:layout_toRightOf="@+id/rc_now"
+            android:textColor="@color/texts1"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="40dp"
+            android:textSize="18sp"
+            android:text="10 Minutes" />
+
+
+        <Button
+            android:id="@+id/btn_rc_send_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_below="@+id/ll_pool_list"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="40dp"
+			android:paddingRight="40dp"
+			android:paddingTop="10dp"
+			android:paddingBottom="10dp"
+			android:textColor="@color/white"
+			android:textStyle="bold"
+			android:textSize="20sp"
+			android:text="Send Request"
+            android:background="#F26075" />
+         -->
+</RelativeLayout>

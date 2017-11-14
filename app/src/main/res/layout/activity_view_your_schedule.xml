@@ -1,0 +1,470 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ViewYourScheduleActivity" >
+<FrameLayout 
+    android:id="@+id/view_today_schedule_loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    android:background="#80000000">
+    <customlibrary.TitanicTextView
+        android:id="@+id/my_text_view"
+        android:text="Loading wait..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+        android:textColor="#212121"
+        android:textSize="50sp" />
+    </FrameLayout>
+    <RelativeLayout
+        android:id="@+id/rl_ts_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+        <Button
+            android:id="@+id/btn_ts_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:onClick="onClick"
+            android:background="@drawable/home" />
+
+        <TextView
+            android:id="@+id/tv_ts_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btn_ts_home"
+            android:layout_alignBottom="@+id/btn_ts_home"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/cltstitle"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/btn_ts_home"
+            android:text="Today's Schedule" />
+        
+        <TextView
+            android:id="@+id/tv_ts_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btn_ts_home"
+            android:layout_alignBottom="@+id/btn_ts_home"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/texts1"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:layout_toRightOf="@+id/tv_ts_title"
+            android:text="Monday" />
+        
+        <TextView
+            android:id="@+id/tv_ts_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btn_ts_home"
+            android:layout_alignBottom="@+id/btn_ts_home"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/cltstitle"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:layout_toRightOf="@+id/tv_ts_day"
+            android:text="04/09" />
+        
+        <TextView
+            android:id="@+id/tv_ts_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btn_ts_home"
+            android:layout_alignBottom="@+id/btn_ts_home"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/texts1"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/tv_ts_date"
+            android:text="09:00 AM" />
+        
+        <TextView
+            android:id="@+id/tv_ts_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btn_ts_home"
+            android:layout_alignBottom="@+id/btn_ts_home"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/cltstitle"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:text="Christine" />
+        <TextView
+            android:id="@+id/btn_ts_all_inst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btn_ts_home"
+            android:layout_alignBottom="@+id/btn_ts_home"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/black"
+            android:background="@null"
+            android:textStyle="bold"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:layout_toLeftOf="@+id/tv_ts_name"
+            android:text="All Instructor" />
+
+        <Button
+            android:id="@+id/btn_menu_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:onClick="onClick"
+            android:visibility="gone"
+            android:background="@drawable/menu_button" />
+        
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_ts_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rl_ts_topbar"
+        android:background="#DDE5FB" >
+        
+        
+        <TextView
+            android:id="@+id/tv_ts_studentname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/texts1"
+            android:layout_centerVertical="true"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Name" />
+        
+        <TextView
+            android:id="@+id/tv_ts_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="55dp"
+			android:layout_centerVertical="true"
+            android:textColor="@color/texts1"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:layout_toLeftOf="@+id/tv_ts_level"
+            android:text="Age" />
+        
+         <TextView
+            android:id="@+id/tv_ts_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="100dp"
+			android:layout_centerVertical="true"
+            android:textColor="@color/texts1"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:layout_toLeftOf="@+id/tv_ts_sched_level"
+            android:text="Level" />
+         
+          <TextView
+            android:id="@+id/tv_ts_sched_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="45dp"
+			android:layout_centerVertical="true"
+            android:textColor="@color/texts1"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:layout_toLeftOf="@+id/tv_ts_lessonname"
+            android:text="Sch. Level" />
+        
+          
+       <!--   <TextView
+            android:id="@+id/tv_ts_wbr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+			android:layout_centerVertical="true"
+            android:textColor="@color/texts1"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:layout_toLeftOf="@+id/tv_ts_lessonname"
+            android:text="  W   B    R" /> -->
+          <TextView
+            android:id="@+id/tv_ts_present"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_marginRight="5dp"
+			android:layout_centerVertical="true"
+            android:textColor="@color/texts1"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Attendance" />
+        
+         <TextView
+            android:id="@+id/tv_ts_cls_lvl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_toLeftOf="@+id/tv_ts_present"
+			android:layout_marginRight="35dp"
+			android:layout_centerVertical="true"
+            android:textColor="@color/texts1"
+            android:visibility="gone"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Cls/Lvl" /> 
+         
+         <TextView
+            android:id="@+id/tv_ts_paid_cls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_toLeftOf="@+id/tv_ts_cls_lvl"
+			android:layout_marginRight="20dp"
+			android:layout_centerVertical="true"
+            android:textColor="@color/texts1"
+            android:visibility="gone"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Paid Cls" />
+         <TextView 
+             android:id="@+id/tv_ts_lessonname"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginRight="18dp"
+			android:layout_centerVertical="true"
+            android:textColor="@color/texts1"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Cls"
+            android:layout_toLeftOf="@+id/tv_ts_paid_cls"/>
+         
+    </RelativeLayout>
+        
+ <!-- <RelativeLayout
+     	android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_ts_bar" >
+       <TextView
+           android:id="@+id/tv_ts_time_row"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentTop="true"
+           android:layout_alignParentLeft="true"
+           android:layout_marginLeft="5dp"
+           android:textColor="@color/texts1"
+           android:textSize="18sp"
+           android:text="09:00AM" />
+	<RelativeLayout 
+            android:id="@+id/rl_name_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"            
+            android:layout_toLeftOf="@+id/tv_ts_age_row"
+            android:layout_marginLeft="20dp">
+			
+		<TextView
+            android:id="@+id/tv_cl_studentname_row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/texts1"
+			android:layout_alignBottom="@+id/btn_camera"
+            android:textSize="24sp"
+            android:text="Student Name" />
+    
+       <Button
+             android:id="@+id/btn_camera"
+             style="?android:attr/buttonStyleSmall"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerVertical="true"
+             android:layout_marginLeft="5dp"
+			 android:layout_marginTop="5dp"
+             android:layout_toRightOf="@+id/tv_cl_studentname_row"
+             android:background="@drawable/camera_icon" />
+            
+            
+        </RelativeLayout>
+    
+    
+        <TextView
+            android:id="@+id/tv_ts_age_row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="43dp"
+            android:textColor="@color/texts1"
+            android:textSize="22sp"
+            android:layout_toLeftOf="@+id/et_ts_slevel"
+            android:text="Age" />
+        
+	<ToggleButton
+		android:id="@+id/btn_yes_no"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_marginRight="5dp"
+		android:textOn=""
+		android:textOff=""
+		android:checked="true"
+		android:background="@drawable/bgtoggle" />
+
+	 <Button
+            android:id="@+id/btn_ts_cls_lvl_row"
+            android:layout_width="46dp"
+            android:layout_height="wrap_content"
+			android:layout_toLeftOf="@+id/btn_yes_no"
+			android:layout_marginRight="30dp"
+            android:textColor="@color/texts1"
+			android:text="456"
+			android:gravity="center"
+			android:padding="2dp"
+			android:textSize="25sp"
+            android:background="@color/yellow" /> 
+         
+         <TextView
+            android:id="@+id/tv_ts_paid_cls_row"
+            android:layout_width="46dp"
+            android:layout_height="wrap_content"
+			android:layout_toLeftOf="@+id/btn_ts_cls_lvl_row"
+			android:layout_marginRight="25dp"
+            android:textColor="@color/texts1"
+            android:textSize="25sp"
+            android:text="456"
+            android:gravity="center"
+			android:padding="2dp" />
+         
+         
+	<TextView
+		android:id="@+id/tv_ts_cls_row"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toLeftOf="@+id/tv_ts_paid_cls_row"
+		android:layout_marginRight="18dp"
+		android:textColor="@color/texts1"
+		android:textSize="22sp"
+		android:text="SP" /> 
+         
+         
+    <CheckBox
+        android:id="@+id/chb_ts_wbr_w"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_marginRight="5dp"
+        android:button="@drawable/checkbox_selection"
+        android:layout_toLeftOf="@+id/chb_ts_wbr_b" />
+    
+    <CheckBox
+        android:id="@+id/chb_ts_wbr_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/checkbox_selection"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/chb_ts_wbr_r" />
+    
+    <CheckBox
+        android:id="@+id/chb_ts_wbr_r"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:button="@drawable/checkbox_selection"
+        android:layout_toLeftOf="@+id/tv_ts_cls_row" />
+        
+	<Button
+        android:id="@+id/et_ts_sched_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:textColor="@color/texts1"
+        android:textSize="24sp"
+        android:editable="false"
+		android:gravity="left|center_vertical"
+		android:paddingLeft="3dp"
+		android:background="@drawable/dropdown"			
+        android:singleLine="true"
+        android:maxWidth="80dp"
+        android:layout_toLeftOf="@+id/chb_ts_wbr_w"
+        android:entries="@array/level" />
+      
+            
+	<Button
+        android:id="@+id/et_ts_slevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="35dp"
+        android:textColor="@color/texts1"
+        android:textSize="24sp"
+     	android:gravity="left|center_vertical"
+		android:paddingLeft="3dp"
+     	android:background="@drawable/dropdown"		
+        android:singleLine="true"
+        android:maxWidth="80dp"
+        android:layout_toLeftOf="@+id/et_ts_sched_level"
+        android:entries="@array/level"/>
+    
+         
+         
+    <Button
+        android:id="@+id/btn_isa_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+		android:layout_below="@+id/rl_name_camera"
+		android:layout_marginTop="20dp"
+        android:background="@drawable/isa_green_alert" />
+         
+	<RelativeLayout
+        android:id="@+id/rl_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+		android:layout_below="@+id/rl_name_camera"
+        android:layout_toLeftOf="@+id/img_late"
+        android:layout_toRightOf="@+id/btn_isa_alert" >
+
+    <TextView
+        android:id="@+id/tv_cl_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/texts1"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/btn_cl_note"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="04/20/14 this is where the instructor comments would be shownmnzbxjkagDSb ZMBcjkBDVBmzbIuavjbJKZXbck;ABVBKb JKBiadbvkjbZXJK bjBADFI[BJKZb JKbaf]" />
+
+    <Button
+        android:id="@+id/btn_cl_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/notes_icon" />
+    </RelativeLayout>
+
+	<ImageView
+        android:id="@+id/img_late"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_marginTop="20dp"
+		android:layout_below="@+id/btn_ts_cls_lvl_row"
+		android:layout_marginRight="146dp"		
+        android:src="@drawable/late_icon" />
+
+</RelativeLayout> -->
+
+    
+    
+    <ListView
+        android:id="@+id/lv_ts_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_ts_bar"
+        android:layout_marginBottom="20dp"
+        android:layout_centerVertical="true" >
+	</ListView>
+</RelativeLayout>

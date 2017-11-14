@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AquaticsStudio</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ourmission">Our Mission</string>
+    <string name="loginheader">Login Header</string>
+    <string name="ourmissiontext">Our mission is to educate and motivate people of all ages to be safer and learn proper 
+swimming technique.</string>
+    <string name="ourvalues">Our Values</string>
+    <string name="passiontext">We have excitement and enthusiasm for our mission and believe swimming is an 
+invaluable, year-round, life-long skill. We do this because we feel there is a swimmer in 
+everyone.</string>
+    <string name="approachabilitytext">We are welcoming, ready to listen, and available to all of our families because we take a 
+genuine and active interest in each and every person in our program.</string>
+    <string name="adaptabilitytext">We are always open to change as our customer’s needs and the industry changes. We 
+feel that change is what makes us a stronger swim school and aquatic center and allows
+us to maximize the satisfaction of the customer experience.</string>
+    <string name="selfresponsibilitytext">We expect each individual to take ownership of their actions and to be accountable for 
+their personal success. We take pride in our work and ensure our services are delivered 
+to the best of our ability.</string>
+    <string name="title_activity_manu">ManuActivity</string>
+    <string name="data">Please remind all your students to join the swim meet which is coming up this saturday 4/19 </string>
+    <string name="title_activity_current_lesson">CurrentLessonActivity</string>
+   <string name="toast_crash"></string>
+    <string-array name="level">
+        <item>P1</item>
+        <item>P2</item>
+        <item>P3</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="wu_w">
+        <item></item>
+        <item>W1</item>
+        <item>W2</item>
+        <item>W3</item>
+        <item>W4</item>
+        <item>W5</item>
+    </string-array>
+    <string-array name="wu_b">
+        <item></item>
+        <item>B1</item>
+        <item>B2</item>
+        <item>B3</item>
+        <item>B4</item>
+        <item>B5</item>
+    </string-array>
+    <string-array name="wu_r">
+        <item></item>
+        <item>R1</item>
+        <item>R2</item>
+        <item>R3</item>
+        <item>R4</item>
+        <item>R5</item>
+    </string-array>
+    <string-array name="nav_drawer_items">
+        <item>Inbox</item>
+        <item>Sent Item</item>
+        <item>Trash</item>
+    </string-array>
+
+    <string name="title_activity_all_lessons">AllLessonsActivity</string>
+    <string name="title_activity_request_shadow">RequestShadowActivity</string>
+    <string name="title_activity_all_day_attendance">AllDayAttendanceActivity</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_tpmain">TPMainActivity</string>
+    <string name="title_activity_aa_main">AaMainActivity</string>
+    <string name="title_activity_modify_comments">ModifyComments</string>
+    <string name="title_activity_message_center">Message Center</string>
+    <string name="title_activity_turbo_idea">TurboIdeaActivity</string>
+    <string name="title_activity_detail_mail">DetailMailActivity</string>
+    <string name="title_activity_create_new_message">CreateNewMessageActivity</string>
+    <string name="title_activity_to__cc__selection">To_Cc_SelectionActivity</string>
+    <string name="title_activity_detail_todays_schedule">DetailTodaysScheduleActivity</string>
+    <string name="title_activity_att_tp">AttTPActivity</string>
+    <string name="title_activity_request_deck_menu">RequestDeckMenuActivity</string>
+    <string name="title_activity_to_and_cc_selection">ToAndCcSelectionActivity</string>
+    <string name="title_activity_to_and_cc_edit">ToAndCcEditActivity</string>
+
+    <string-array name="menuoption">
+        <item>CURRENT SCHEDULE</item>
+        <item>TODAY\'S SCHEDULE</item>
+        <item>MESSAGE CENTER</item>
+        <item>REQUEST DECK ASSIST</item>
+        <item>AWARD A TERRIFIC TURBO</item>
+        <item>TURBO IDEA</item>
+        <item>PEER TO PEER</item>
+        <item>REPORTS</item>
+    </string-array>
+    <string-array name="menuoption1">
+        <item>VIEW SCHEDULE</item>
+        <item>DAILY REPORT</item>
+        <item>AWARD A TERRIFIC TURBO</item>
+        <item>TURBO IDEA</item>
+        <item>MESSAGE CENTER</item>
+        <item>REQUEST DECK ASSIST</item>
+        <item>PEER TO PEER</item>
+        <item>QUESTION OF THE MONTH</item>
+    </string-array>
+    <string-array name="menuoption2">
+        <item>VIEW CURRENT LESSON</item>
+        <item>VIEW SCHEDULE</item>
+        <item>AWARD A TURBO</item>
+        <item>TURBO IDEA</item>
+        <item>SOCIAL MEDIA</item>
+        <item>EVALUATIONS</item>
+        <item>MESSAGE CENTER</item>
+        <item>REQUEST DECK ASSIST</item>
+        <item>PEER TO PEER</item>
+        <item>REPORTS</item>
+        <item>SHADOW REQUEST</item>
+        <item>COMMU. LOGS.</item>
+    </string-array>
+    <string-array name="reports">
+        <item>Daily Report</item>
+        <item>View Individual Performance</item>
+        <item>Peer to Peer</item>
+        <item>Renewal Rates by Sites</item>
+        <item>Question of the Month</item>
+        <item>Swim Meet Instr. Points</item>
+        <item>Swim Team Rosters</item>
+        <item>One Day Program Rosters</item>
+        <item>View My Time Card</item>
+        <item>Dives &amp; Turns</item>
+        <item>Jr. Guard Prep</item>
+        <item>Boy Scout</item>
+        <item>Girl Scout</item>
+        <item>Cub Scout</item>
+        <item>Water Polo</item>
+        <item>Level Advancement Report</item>
+        <item>Stop List by Instructor</item>
+        <item>Today’s First Time Students</item>
+        <item>Report Pool Issue</item>
+        <item>Report Maintenance Issue</item>
+        <item>Report IT Issue</item>
+        <item>Report Customer Concern</item>
+    </string-array>
+    <!-- Instructors Report -->
+    <string-array name="reports_instrucotr">
+        <item>Daily Report</item>
+        <item>View Individual Performance</item>
+        <item>Peer to Peer</item>
+        <item>Renewal Rates by Sites</item>
+        <item>Question of the Month</item>
+        <item>Swim Meet Instr. Points</item>
+        <item>Swim Team Rosters</item>
+        <item>One Day Program Rosters</item>
+        <item>View My Time Card</item>
+        <item>Dives &amp; Turns</item>
+        <item>Jr. Guard Prep</item>
+        <item>Boy Scout</item>
+        <item>Girl Scout</item>
+        <item>Cub Scout</item>
+        <item>Water Polo</item>
+        <item>Instructor Report</item>	
+        <item>Report Pool Issue</item>
+        <item>Report Maintenance Issue</item>
+        <item>Report IT Issue</item>
+        <item>Report Customer Concern</item>
+    </string-array>
+  
+    <string-array name="hour">
+        <item>hr</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="min">
+        <item>min</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
+        <item>49</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>59</item>
+        <item>60</item>
+    </string-array>
+    <string-array name="am_pm">
+        <item>am/pm</item>
+        <item>am</item>
+        <item>pm</item>
+    </string-array>
+    <string-array name="daily_reports">
+        <item>Aquatics Director Report</item>
+        <item>Area Quality Manager Report</item>
+        <item>Aquatics Manager Report</item>
+        <item>Quality Manager Report</item>
+        <item>Lead Trainer Report</item>
+        <item>Training Report</item>
+        <item>Senior Instructors Report</item>
+        <item>Senior Deck Supervisor Report</item>
+        <item>Deck Supervisor Report</item>
+        
+         <item >LA Fitness/City Sports Instructor Daily Report</item>
+        <item >LA Fitness/City Sports Manager Report</item>
+         <item >LA Fitness/City Sports Lead Instuctor</item>
+    </string-array>
+
+    <string name="title_activity_report">ReportActivity</string>
+    <string name="title_activity_detail_report">DetailReportActivity</string>
+    <string name="title_activity_view_schedule">ViewScheduleActivity</string>
+    <string name="title_activity_get_all_instructor">GetAllInstructorActivity</string>
+    <string name="title_activity_todays_schedule__deck_supervisor">TodaysSchedule_DeckSupervisorActivity</string>
+    <string name="title_activity_daliy_report">DaliyReportActivity</string>
+    <string name="title_activity_check_server">CheckServerActivity</string>
+    <string name="title_activity_instructor_selection_for_vcs">InstructorSelectionForVCSActivity</string>
+    <string name="title_activity_manager_todays_schedule">ManagerTodaysScheduleActivity</string>
+    <string name="title_activity_manager_vcs">ManagerVCSActivity</string>
+    <string name="title_activity_view_current_lesson_manager">ViewCurrentLessonManagerActivity</string>
+    <string name="title_activity_shadow_logs">ShadowLogsActivity</string>
+    <string name="title_activity_communication_logs">CommunicationLogsActivity</string>
+    <string name="title_activity_view_all_communication">ViewAllCommunicationActivity</string>
+    <string name="title_activity_view_todays_schedule_activty">ViewTodaysScheduleActivty</string>
+    <string name="title_activity_instructor_current_schedule">InstructorCurrentScheduleActivity</string>
+    <string name="title_submit_work_report">SubmitWorkReport</string>
+
+</resources>

@@ -1,0 +1,39 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+    <item
+    android:id="@+id/menu_overflow"
+    android:icon="@drawable/ic_move_to"
+    android:orderInCategory="11111"
+    android:showAsAction="always">
+    <menu>
+        <item
+            android:id="@+id/contacts"
+            android:showAsAction="never"
+            android:title="Contacts"/>
+
+
+        <item
+            android:id="@+id/service_Tasks"
+            android:showAsAction="never"
+            android:title="Service Tasks"/>
+
+
+        <item
+            android:id="@+id/charge_summary"
+            android:showAsAction="never"
+            android:title="Charge Summary"/>
+
+
+        <item
+            android:id="@+id/capture_signature"
+            android:showAsAction="never"
+            android:title="Capture Signature"/>
+    </menu>
+</item>
+
+</menu>

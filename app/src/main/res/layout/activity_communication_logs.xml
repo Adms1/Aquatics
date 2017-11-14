@@ -1,0 +1,147 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/alternate"
+    tools:context=".CommunicationLogsActivity" >
+
+    <FrameLayout 
+    android:id="@+id/commu_loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000">
+    <customlibrary.TitanicTextView
+        android:id="@+id/my_text_view"
+        android:text="Loading wait..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:background="@android:color/transparent"
+        android:textColor="#212121"
+        android:textSize="50sp" />
+
+    </FrameLayout>
+    
+    <include 
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/toplayout_date_time"/>
+    
+    <LinearLayout
+        android:id="@+id/ll_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ll_top"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="clip_vertical"
+                android:text="Employee Name:"
+                android:textColor="@color/texts1"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_commu_emp_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:onClick="onClick"
+                android:text="Jon"
+                android:textColor="@color/texts1"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Date:"
+                android:textColor="@color/texts1"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_commu_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/textarea_normal"
+                android:ems="10"
+                android:drawableRight="@drawable/ic_action_go_to_today"
+                android:gravity="left|center_vertical"
+                android:maxLength="50"
+                android:padding="5dp"
+                android:onClick="onClick"
+                android:singleLine="true"
+                android:textColor="@color/texts1"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <EditText 
+            android:id="@+id/et_communication_log"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp" 
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"
+            android:maxLength="200"
+            android:background="@drawable/textarea_bg"
+            android:gravity="top|left|center_vertical"
+            android:maxLines="8"/>
+
+        	<Button
+        	    android:id="@+id/btn_save_communication"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:layout_marginTop="10dp"
+        	    android:background="@drawable/button_send"
+        	    android:onClick="onClick"
+        	    android:text="Save"
+        	    android:layout_marginRight="50dp"
+        	    android:layout_gravity="center_vertical|right"
+        	    android:textColor="@color/white"
+        	    android:textSize="18sp"
+        	    android:textStyle="bold" />
+        	
+        	<TextView 
+        	    android:id="@+id/tv_history_communication"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:textColor="@color/link"
+        	    android:textSize="18sp"
+        	    android:textStyle="bold"
+        	    android:layout_marginTop="10dp"
+        	    android:layout_marginLeft="10dp"
+        	    android:text="View History"/>
+        
+    </LinearLayout>
+</RelativeLayout>

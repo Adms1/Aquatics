@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	<item android:id="@+id/action_new_mail"
+          android:icon="@drawable/ic_new_email"
+          android:title="New Mail"
+          android:showAsAction="ifRoom" />
+	<item android:id="@+id/action_new_folder"
+          android:icon="@drawable/ic_action_new_label"
+          android:title="New Folder"
+          android:showAsAction="ifRoom" />
+	
+	<item android:id="@+id/action_log_off"
+		android:icon="@android:drawable/ic_lock_power_off"
+          android:title="Log off"
+          android:showAsAction="ifRoom"/>
+</menu>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical" >
+<!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#CDCDFA"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:text="Time"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.50"
+            android:text="Instructor Name"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.50"
+            android:text="Student Name"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.50"
+            android:text="Age"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.50"
+            android:text="Level"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:text="L Type"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.75"
+            android:text="Comment"
+            android:textColor="@color/texts1" />
+    </LinearLayout> -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_vsi_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:minWidth="100dp"
+            android:maxWidth="100dp"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:id="@+id/tv_vsi_instructor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_vsi_time"
+            android:text="Instructor Name"
+            android:minWidth="198dp"
+            android:maxWidth="198dp"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:id="@+id/tv_vsi_stud_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_vsi_instructor_name"
+            android:text="Student Name"
+            android:minWidth="198dp"
+            android:maxWidth="198dp"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:id="@+id/tv_vsi_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_vsi_stud_name"
+            android:text="Age"
+            android:minWidth="65dp"
+            android:maxWidth="65dp"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:id="@+id/tv_vsi_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_vsi_age"
+            android:text="Level"
+            android:minWidth="65dp"
+            android:maxWidth="65dp"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:id="@+id/tv_vsi_lt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_vsi_level"
+            android:text="L Type"
+            android:minWidth="100dp"
+            android:maxWidth="100dp"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:id="@+id/tv_vsi_comment"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_vsi_lt"
+            android:text="Comment"
+            android:textColor="@color/texts1" />
+        </RelativeLayout>
+
+   
+        
+</LinearLayout>

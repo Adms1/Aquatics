@@ -1,0 +1,250 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".AwardTurboActivity" >
+<FrameLayout 
+    android:id="@+id/award_turbo_loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000">
+    <customlibrary.TitanicTextView
+        android:id="@+id/my_text_view"
+        android:text="Loading wait..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:background="@android:color/transparent"
+        android:textColor="#212121"
+        android:textSize="50sp" />
+    </FrameLayout>
+    <include 
+        android:id="@+id/ll_award_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/toplayout_date_time"/>
+    
+    <!-- <LinearLayout
+        android:id="@+id/ll_award_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/maintext"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_award_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="15dp"
+            android:text="Christine"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_award_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/tv_award_name"
+            android:paddingBottom="20dp"
+            android:paddingTop="15dp"
+            android:text="MON"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_award_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/tv_award_day"
+            android:paddingBottom="20dp"
+            android:paddingTop="15dp"
+            android:text="04/14"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_award_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/tv_award_date"
+            android:paddingBottom="20dp"
+            android:paddingTop="15dp"
+            android:text="9:00 AM"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_award_logoff"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+			android:gravity="right"
+			android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:paddingBottom="20dp"
+            android:paddingTop="15dp"
+            android:text="Log Off"
+            android:onClick="onClick"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </LinearLayout> -->
+
+    <TextView
+        android:id="@+id/tv_award_turbo_give"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ll_award_top"
+		android:paddingLeft="10dp"
+		android:background="#CDCDFA"
+		android:textColor="#1E1E8E"
+		android:textSize="25sp"
+		android:textStyle="bold"
+        android:text="Have a terrific turbo to give out?" />
+
+    <RelativeLayout
+        android:id="@+id/rl_award_drop_with_turbo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_award_turbo_give" >
+        <LinearLayout
+            android:id="@+id/ll_award_dropdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+                
+                        <TextView
+					        android:id="@+id/tv_award_site"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:layout_marginLeft="20dp"
+					        android:layout_marginTop="20dp"
+					        android:textColor="@color/texts1"
+					        android:textSize="20sp"
+					        android:text="Site:" />
+                
+                        <Button 
+                            android:id="@+id/btn_award_site"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="20sp"
+                            android:padding="5dp"
+                            android:onClick="onClick"
+                            android:gravity="left|center_vertical"
+                            android:background="@drawable/selector_dropbox"
+                            android:textColor="@color/texts1"
+                            android:hint="Site"/>
+                        
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_award_to_whom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="To  :"
+                    android:textColor="@color/texts1"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btn_award_to_whom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_dropbox2"
+                    android:gravity="left|center_vertical"
+                    android:onClick="onClick"
+                    android:padding="5dp"
+                    android:hint="To Whom"
+                    android:textColor="@color/texts1"
+                    android:textSize="20sp" />
+            </LinearLayout>
+            
+        </LinearLayout>
+        
+        <ImageView 
+            android:id="@+id/iv_turbo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"/>
+        
+    </RelativeLayout>
+    
+    <TextView
+       android:id="@+id/tv_award_why"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="20dp"
+       android:layout_marginTop="20dp"
+       android:textColor="@color/texts1"
+       android:textSize="20sp"
+       android:layout_below="@+id/rl_award_drop_with_turbo"
+       android:text="Why:" />
+    
+    <utils.ActionEditText
+        android:id="@+id/et_award_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/texts1"
+        android:padding="10dp"
+        android:text=""
+		android:scrollbarAlwaysDrawVerticalTrack="true"
+		android:inputType="textMultiLine"
+        android:maxLength="1000"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:maxLines="10"
+        android:gravity="left|top|center_vertical"
+        android:background="@drawable/textarea_bg"
+        android:layout_below="@+id/tv_award_why"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"/>
+    
+    <Button 
+        android:id="@+id/btn_award_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/et_award_msg"
+        android:background="@drawable/selector_send_btn"
+        android:text="Send"
+        android:textSize="18sp"
+        android:onClick="onClick"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/et_award_msg"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+    
+</RelativeLayout>

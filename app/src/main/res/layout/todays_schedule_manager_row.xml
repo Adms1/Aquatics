@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_mtsi_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:minWidth="100dp"
+            android:maxWidth="100dp"
+            android:textColor="@color/texts1" />
+	<LinearLayout 
+	    android:id="@+id/ll_mtsi_instructor_name"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:minWidth="198dp"
+        android:maxWidth="198dp"
+        android:layout_toRightOf="@+id/tv_mtsi_time"
+        android:orientation="horizontal">
+        <ImageView 
+            android:id="@+id/iv_mtsi_level"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/late_icon"/>
+        <TextView
+            android:id="@+id/tv_mtsi_instructor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Instructor Name"
+            android:minWidth="180dp"
+            android:maxWidth="180dp"
+            android:textColor="@color/texts1" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_mtsi_stud_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ll_mtsi_instructor_name"
+            android:text="Student Name"
+            android:minWidth="198dp"
+            android:maxWidth="198dp"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:id="@+id/tv_mtsi_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_mtsi_stud_name"
+            android:text="Age"
+            android:minWidth="65dp"
+            android:maxWidth="65dp"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:id="@+id/tv_mtsi_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_mtsi_age"
+            android:text="Level"
+            android:minWidth="65dp"
+            android:maxWidth="65dp"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:id="@+id/tv_mtsi_lt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_mtsi_level"
+            android:text="L Type"
+            android:minWidth="100dp"
+            android:maxWidth="100dp"
+            android:textColor="@color/texts1" />
+
+        <TextView
+            android:id="@+id/tv_mtsi_comment"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_mtsi_lt"
+            android:layout_toLeftOf="@+id/btn_mtsi_swim_comp"
+            android:text="Comment"
+            android:textColor="@color/texts1" />
+        <Button 
+            android:id="@+id/btn_mtsi_swim_comp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/text_blue"
+            android:text="Swim\nComp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:enabled="false"
+            android:clickable="false"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/white"/>
+        </RelativeLayout>
+</LinearLayout>

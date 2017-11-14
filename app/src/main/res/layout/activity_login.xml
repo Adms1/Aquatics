@@ -1,0 +1,230 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".LoginActivity" >
+    <FrameLayout
+    android:id="@+id/login_loading"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+    android:background="#80000000" >
+
+    <customlibrary.TitanicTextView
+        android:id="@+id/my_text_view"
+        android:text="Loading wait..."
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+        android:textColor="#212121"
+        android:textSize="50sp" />
+    </FrameLayout>
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <RelativeLayout 
+        android:id="@+id/rl_login_activity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    
+	<LinearLayout 
+	    android:id="@+id/ll_login_body"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    >
+	<TextView
+        android:id="@+id/tv_our_mission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="@string/ourmission"
+        android:textStyle="bold"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/maintext"/>
+
+    <TextView
+        android:id="@+id/tv_our_mission_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_our_mission"
+        android:text="@string/ourmissiontext"
+        android:layout_marginLeft="10dp"
+		android:textColor="@color/texts1"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault" />
+
+    <TextView
+        android:id="@+id/tv_our_values"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:textStyle="bold"
+        android:textColor="@color/maintext"
+        android:layout_below="@+id/tv_our_mission_text"
+        android:layout_marginTop="5dp"
+        android:text="@string/ourvalues" />
+
+    <TextView
+        android:id="@+id/tv_passion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_our_values"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/black"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+
+    <TextView
+        android:id="@+id/tv_passion_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/tv_passion"
+        android:text="@string/passiontext"
+        android:textColor="@color/texts1"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault" />
+
+    <TextView
+        android:id="@+id/tv_approachability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_passion_text"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/black"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+    
+    <TextView
+        android:id="@+id/tv_approachability_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+		android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_approachability"
+        android:text="@string/approachabilitytext"
+        android:textColor="@color/texts1"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault" />
+    
+    <TextView
+        android:id="@+id/tv_adaptability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_approachability_text"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/black"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+    
+    <TextView
+        android:id="@+id/tv_adaptability_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+		android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_adaptability"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:text="@string/adaptabilitytext"
+        android:textColor="@color/texts1"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault" />
+    
+    <TextView
+        android:id="@+id/tv_selfresponsibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_adaptability_text"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/black"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+    
+    <TextView
+        android:id="@+id/tv_selfresponsibility_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:layout_marginLeft="10dp"
+		android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_selfresponsibility"
+        android:text="@string/selfresponsibilitytext"
+        android:textColor="@color/texts1"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault" />
+
+    <EditText
+        android:id="@+id/et_login_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_selfresponsibility_text"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/username_background"
+        android:hint="Username"
+        android:textColor="@color/texts"
+        android:layout_gravity="center_horizontal"
+        android:singleLine="true"
+        android:maxLength="20"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+		android:paddingLeft="70dp"
+		android:imeOptions="flagNoFullscreen"
+        android:ems="10" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/et_login_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_login_username"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/password_background"
+        android:hint="Password"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/texts"
+		android:gravity="left|center_vertical"
+        android:maxLength="20"
+        android:singleLine="true"
+        android:paddingLeft="70dp"
+        android:ems="10"
+        android:imeOptions="flagNoFullscreen"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:inputType="textPassword" >
+	</EditText>
+	<!-- <view
+	    android:id="@+id/et_login_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        class="ab.dream.customlibrary.ShownEdittext"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/et_login_username"
+        android:layout_centerHorizontal="true" /> -->
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/et_login_password"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onClick"
+        android:background="@drawable/login_button" />
+        </LinearLayout>
+        
+	</RelativeLayout>
+	</ScrollView>        
+</RelativeLayout>

@@ -1,0 +1,131 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ModifyComments" >
+<FrameLayout 
+    android:id="@+id/modify_comments_loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000">
+    <customlibrary.TitanicTextView
+        android:id="@+id/my_text_view"
+        android:text="Loading wait..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+        android:textColor="#212121"
+        android:textSize="50sp" />
+    </FrameLayout>
+    <LinearLayout
+        android:id="@+id/rl_comment_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/maintext"
+        android:orientation="horizontal" >
+	<include 
+	    android:id="@+id/top_modify_comment"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    layout="@layout/toplayout_date_time"/>
+	</LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_comment_top"
+        android:layout_above="@+id/linearLayout1"
+        android:divider="@null"
+        android:scrollbars="none"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp" >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_above="@+id/btn_save_comments"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/et_comments"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textColor="@color/texts1" >
+
+            <requestFocus />
+        </EditText>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_month"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="Keep"
+                android:layout_marginLeft="5dp"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="5dp"
+                android:textSize="15sp"
+                android:background="@drawable/dropdown_port"
+                android:textColor="@color/texts1"
+                 />
+
+            <Button
+                android:id="@+id/btn_day"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="for"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="5dp"
+                android:textSize="15sp"
+                android:textColor="@color/texts1"
+                android:background="@drawable/dropdown_port" />
+
+            <Button
+                android:id="@+id/btn_year"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="ever"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="5dp"
+                android:textColor="@color/texts1"
+                android:textSize="15sp"
+                android:background="@drawable/dropdown_port" />
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_save_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/save" />
+</RelativeLayout>

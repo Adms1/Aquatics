@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".DailyReportActivity" >
+
+     <LinearLayout
+         android:id="@+id/rl_menu_top"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@color/maintext"
+         android:orientation="horizontal" >
+
+         <ImageButton
+             android:id="@+id/btn_back"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_vertical"
+             android:layout_marginLeft="10dp"
+             android:layout_marginTop="5dp"
+             android:layout_marginBottom="5dp"
+             android:background="@null"
+             android:onClick="onClick"
+             android:src="@drawable/bck_btn_white" />
+		<TextView
+             android:id="@+id/tv_dl_title"
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:layout_marginLeft="40dp"
+             android:text="Daily Report"
+             android:textColor="@android:color/white"
+             android:gravity="center_vertical"
+             android:textSize="20sp" />
+         <TextView
+             android:id="@+id/tv_dl_day"
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:layout_marginLeft="40dp"
+             android:text="MON"
+             android:gravity="center_vertical"
+             android:textColor="@android:color/white"
+             android:textSize="20sp" />
+
+         <TextView
+             android:id="@+id/tv_dl_date"
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:layout_marginLeft="40dp"
+             android:text="04/14"
+             android:gravity="center_vertical"
+             android:textColor="@android:color/white"
+             android:textSize="20sp" />
+
+         <DigitalClock
+             android:id="@+id/tv_dl_time"
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:layout_marginLeft="40dp"
+             android:textColor="@android:color/white"
+             android:gravity="center_vertical"
+             android:textSize="20sp" />
+         
+         <TextView
+             android:id="@+id/tv_dl_name"
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:paddingRight="20dp"
+             android:layout_weight="1"
+             android:text="Christine"
+             android:gravity="right|center_vertical"
+             android:textColor="@android:color/white"
+             android:textSize="20sp" />
+     </LinearLayout>
+	<GridView 
+	    android:id="@+id/dailyreport"
+	     android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="10dp"
+       android:verticalSpacing="5dp"
+       android:horizontalSpacing="5dp"
+       android:columnWidth="100dp"
+       android:stretchMode="columnWidth"
+	   android:listSelector="@null"
+       android:numColumns="2"
+       android:layout_below="@+id/rl_menu_top" />
+</RelativeLayout>

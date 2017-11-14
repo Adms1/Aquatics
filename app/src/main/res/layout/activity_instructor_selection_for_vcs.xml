@@ -1,0 +1,176 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".InstructorSelectionForMVCSActivity" >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/btn_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/home"
+        android:onClick="onClick" />
+
+    <TextView
+        android:id="@+id/tv_day"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:text="Day"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textColor="@color/texts1"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:text="Date"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textColor="@color/cltstitle"
+        android:textStyle="bold" />
+
+    <DigitalClock
+        android:id="@+id/digitalClock1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textColor="@color/texts1"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_mngrname"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical|left"
+        android:text="Manager"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textColor="@color/cltstitle"
+        android:textStyle="bold" />
+	
+	</LinearLayout>
+	
+	<TextView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingTop="5dp"
+	    android:paddingBottom="5dp"
+	    android:paddingLeft="10dp"
+	    android:text="Instructor Selection"
+	    android:layout_marginTop="10dp"
+	    android:textColor="@color/texts1"
+	    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+		android:textStyle="bold"
+	    android:background="#DDE5FB"/>
+	<TextView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="Select site"
+	    android:layout_marginTop="10dp"
+	    android:layout_marginLeft="10dp"
+	    android:textColor="@color/texts1"
+	    android:textStyle="bold"/>
+	<HorizontalScrollView
+	    android:id="@+id/hs_is_for_vcs"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp" >
+	    <LinearLayout
+	        android:id="@+id/ll_is_for_vcs"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:orientation="horizontal" >
+	    </LinearLayout>
+	</HorizontalScrollView>
+	
+	<TextView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:textColor="@color/texts1"
+	    android:layout_marginTop="10dp"
+	    android:layout_marginLeft="10dp"
+	    android:textStyle="bold"
+	    android:text="Select instructors"/>
+
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_marginBottom="10dp" >
+		<TextView 
+		    android:id="@+id/tv_is_for_vcs_no_inst"
+		    android:layout_width="match_parent"
+		    android:layout_height="fill_parent"
+		    android:layout_marginBottom="10dp"
+		    android:layout_alignParentTop="true"
+		    android:layout_above="@+id/btn_is_for_vcs_submit"
+		    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+		    android:text="No instructor schedule found for selected site."
+		    android:visibility="gone"
+		    android:gravity="center"
+		    android:textColor="@color/black"/>
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal"
+		    android:layout_marginBottom="10dp"
+		    android:layout_alignParentTop="true"
+		    android:layout_above="@+id/btn_is_for_vcs_submit" >
+	
+		    <ListView
+		        android:id="@+id/ll_is_for_vcs_male"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:divider="@color/black"
+		        android:layout_marginLeft="10dp"
+		        android:layout_marginRight="5dp"
+		        android:dividerHeight="1dp" />
+	
+		    <ListView
+		        android:id="@+id/ll_is_for_vcs_female"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="10dp"
+		        android:divider="@color/black"
+		        android:dividerHeight="1dp" />
+
+		</LinearLayout>
+	
+		<Button 
+		    android:id="@+id/btn_is_for_vcs_submit"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"
+		    android:layout_centerHorizontal="true"
+		    android:text="Submit"
+		    android:textStyle="bold"
+		    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+		    android:textColor="@color/white"
+		    android:background="@color/text_blue"
+		    android:paddingLeft="20dp"
+		    android:paddingRight="20dp"
+		    android:paddingTop="10dp"
+		    android:paddingBottom="10dp"
+		    android:onClick="onClick" />
+	</RelativeLayout>
+
+</LinearLayout>

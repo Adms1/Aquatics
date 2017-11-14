@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/white">
+	<Button 
+    	android:id="@+id/slid_left"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/prev_button"
+        android:visibility="gone"
+        android:layout_gravity="left"
+        android:onClick="onClick"/>
+    
+    <Button
+		android:id="@+id/btn_footer_send_attendance"
+        android:layout_width="400dp"
+        android:layout_height="70dp"
+        android:background="@color/pink"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="35sp"
+        android:text="Send Attendance" />
+    
+    <Button 
+    	android:id="@+id/slid_right"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/next_button"
+        android:layout_gravity="right"
+        android:visibility="gone"
+        android:onClick="onClick"/>
+</FrameLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:id="@+id/back"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:tag="back" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#269B1A"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:text="Prev"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/female"
+            android:gravity="right|center_vertical"
+            android:paddingRight="5dp"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/front"
+        style="@style/MyListFrontContent"
+        android:orientation="vertical"
+        android:tag="front" >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+			<TableLayout
+			    android:id="@+id/table_mvcs_shadow"
+	        	android:layout_width="match_parent"
+	       		 android:layout_height="wrap_content"
+	       		  >
+	
+	        	<TableRow
+	           		 android:id="@+id/tableRow1"
+        		     android:layout_width="wrap_content"
+	       		     android:layout_height="wrap_content" >
+	       		     <TextView 
+	       		         android:id="@+id/tv_mvc_intructor_name"
+	       		         android:layout_width="wrap_content"
+	       		         android:layout_height="wrap_content"
+	       		         android:textColor="@color/texts1"/>
+	       		     <Button 
+	       		         android:id="@+id/btn_start_shadow"
+	       		         android:layout_width="wrap_content"
+	       		         android:layout_height="wrap_content"
+	       		         android:background="@color/text_blue"
+	       		         android:textColor="@color/white"
+	       		         android:layout_marginLeft="10dp"
+	       		         android:text="Start Shadow"
+	       		         android:textStyle="bold"
+	       		         android:paddingLeft="10dp"
+	       		         android:paddingRight="10dp"
+	       		         android:paddingTop="5dp"
+	       		         android:paddingBottom="5dp"
+	       		         android:layout_marginTop="5dp"/>
+	       		     <TextView 
+	       		         android:id="@+id/tv_shadow_start"
+	       		         android:layout_width="wrap_content"
+	       		         android:layout_height="wrap_content"
+	       		         android:layout_marginLeft="10dp"
+	       		         android:textColor="@color/texts1"/>
+	       		     <Button 
+	       		         android:id="@+id/btn_stop_shadow"
+	       		         android:layout_width="wrap_content"
+	       		         android:layout_height="wrap_content"
+	       		         android:background="@color/text_blue"
+	       		         android:textColor="@color/white"
+	       		         android:layout_marginLeft="10dp"
+	       		         android:text="Stop Shadow"
+	       		         android:textStyle="bold"
+	       		         android:paddingLeft="10dp"
+	       		         android:paddingRight="10dp"
+	       		         android:paddingTop="5dp"
+	       		         android:paddingBottom="5dp"
+	       		         android:layout_marginTop="5dp"/>
+	       		     <TextView 
+	       		         android:id="@+id/tv_shadow_stop"
+	       		         android:layout_width="wrap_content"
+	       		         android:layout_height="wrap_content"
+	       		         android:layout_marginLeft="10dp"
+	       		         android:layout_marginRight="5dp"
+	       		         android:textColor="@color/texts1"/>
+	       		 </TableRow>
+	    	</TableLayout>	
+	    	
+            <LinearLayout
+                android:id="@+id/ll_view_schedule_students"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/table_mvcs_shadow"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/tv_view_schedule_students"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="ABC"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

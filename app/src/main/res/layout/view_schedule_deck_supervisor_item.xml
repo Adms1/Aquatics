@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
+
+        <LinearLayout
+            android:id="@+id/back"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:tag="back" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="35sp"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:background="#269B1A"
+                android:paddingLeft="5dp"
+                android:text="Prev" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:textSize="35sp"
+                android:textColor="@color/white"
+                android:background="@color/female"
+                android:paddingRight="5dp"
+                android:text="Next" />
+        </LinearLayout>
+
+     <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/front"
+            android:tag="front"
+            style="@style/MyListFrontContent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Chronometer
+	        android:id="@+id/timerValue"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:gravity="center"
+	        android:textSize="15sp"
+	        android:textColor="@color/black"
+	        android:visibility="gone"
+	        android:format="%s" />
+            
+            <ImageButton 
+                android:id="@+id/tv_vsi_shadow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/rq_shdow_btn"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:visibility="gone"
+                android:background="@null"/>
+            <Button android:id="@+id/start"
+		       	android:layout_width="wrap_content"
+		       	android:layout_height="match_parent"
+		       	android:visibility="gone" 
+		       android:text="Start">
+		    </Button>
+		    <Button android:id="@+id/stop"
+		       	android:layout_width="wrap_content"
+		       	android:layout_height="match_parent"
+		       	android:visibility="gone" 
+		       android:text="Stop">
+		    </Button>
+
+            <TextView
+                android:id="@+id/tv_vsi_view_today_schedule"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                
+                android:layout_weight="1"
+                android:text="View Today&apos;s Schedule"
+                android:textColor="@color/link"
+                android:gravity="right"
+                android:paddingRight="10dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+	    <LinearLayout 
+            android:id="@+id/ll_view_schedule_students"
+            android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+	    <TextView 
+	        android:id="@+id/tv_view_schedule_students"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:text="ABC"
+	        android:textColor="@color/black"
+	        android:gravity="center"/>
+	</RelativeLayout>
+        
+		<ListView 
+		    android:id="@+id/lv_my_list"
+		    android:layout_width="match_parent"
+		    android:layout_height="150dp"
+		    android:divider="@color/bigs"
+		    android:layout_marginLeft="20dp"
+        	android:layout_marginRight="20dp"
+		    android:fadeScrollbars="false"
+		    android:visibility="gone"
+		    android:background="@android:color/transparent"
+		    android:dividerHeight="1dp" />
+	<!-- <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+	    
+        <TextView 
+	        android:id="@+id/tv_vsi_instructor_name2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="@color/texts1"
+	        android:layout_marginLeft="10dp"
+	        android:text="Instructor"/>
+        
+	    <TextView 
+	        android:id="@+id/tv_vsi_time2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="@color/texts1"
+	        android:layout_marginLeft="10dp"
+	        android:text="Time"/>
+	    <TextView 
+	        android:id="@+id/tv_vsi_day2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="@color/texts1"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:text="Day"/>
+    
+    </LinearLayout>
+		<ListView 
+		    android:id="@+id/lv_my_list2"
+		    android:layout_width="match_parent"
+		    android:layout_height="100dp"
+		    android:divider="@color/bigs"
+		    android:layout_marginLeft="20dp"
+        	android:layout_marginRight="20dp"
+		    android:fadeScrollbars="false"
+		    android:background="@android:color/transparent"
+		    android:dividerHeight="2dp" />
+         -->
+	</LinearLayout>
+</FrameLayout>

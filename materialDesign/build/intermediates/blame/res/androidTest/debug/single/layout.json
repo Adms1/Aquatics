@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\Megha\\Aquatics\\materialDesign\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\dialog.xml",
+        "source": "D:\\Megha\\Aquatics\\materialDesign\\build\\intermediates\\bundles\\debug\\res\\layout\\dialog.xml"
+    },
+    {
+        "merged": "D:\\Megha\\Aquatics\\materialDesign\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\progress_dialog.xml",
+        "source": "D:\\Megha\\Aquatics\\materialDesign\\build\\intermediates\\bundles\\debug\\res\\layout\\progress_dialog.xml"
+    },
+    {
+        "merged": "D:\\Megha\\Aquatics\\materialDesign\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\color_selector.xml",
+        "source": "D:\\Megha\\Aquatics\\materialDesign\\build\\intermediates\\bundles\\debug\\res\\layout\\color_selector.xml"
+    },
+    {
+        "merged": "D:\\Megha\\Aquatics\\materialDesign\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\snackbar.xml",
+        "source": "D:\\Megha\\Aquatics\\materialDesign\\build\\intermediates\\bundles\\debug\\res\\layout\\snackbar.xml"
+    },
+    {
+        "merged": "D:\\Megha\\Aquatics\\materialDesign\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\number_indicator_spinner.xml",
+        "source": "D:\\Megha\\Aquatics\\materialDesign\\build\\intermediates\\bundles\\debug\\res\\layout\\number_indicator_spinner.xml"
+    }
+]

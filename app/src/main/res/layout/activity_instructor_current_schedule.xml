@@ -1,0 +1,74 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ViewCurrentScheduleInstructorActivity" >
+
+    <FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_filter"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/llbody"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="right"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="2.5dp"
+                android:text="All"
+                android:textColor="@color/white"
+                android:background="@color/text_blue"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall" />
+
+            <CheckBox
+                android:id="@+id/chkAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/checkbox_selection"
+                android:checked="false"
+                android:padding="2.5dp"
+                android:visibility="gone"
+                android:paddingLeft="5dp" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv_filter_instructor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/search"
+            android:layout_below="@+id/llbody"
+            android:layout_marginBottom="10dp"
+            android:background="@color/list_background"
+            android:divider="@color/list_divider"
+            android:dividerHeight="1dp" >
+        </ListView>
+
+        <Button
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:text="Search" />
+    </RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>

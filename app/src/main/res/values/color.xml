@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <color name="maintext">#003E71</color>
+    <color name="maintext_pressed">#021C32</color>
+    <color name="bigs">#5380E5</color>
+    <color name="texts">#999999</color>
+    <color name="texts1">#333333</color>
+    <color name="black">#000000</color>
+    <color name="cltstitle">#B9B9B9</color>
+    <color name="alternate">#EEEEEE</color>
+    <color name="white">#FFFFFF</color>
+    <color name="cee">#FF5C26</color>
+    <color name="aquatics">#7272FF</color>
+    <color name="yellow">#F1E086</color>
+    <color name="pink">#F26075</color>
+    <color name="red">#FF0000</color>
+    <color name="list_item_title">#333333</color>
+    <color name="list_background">#FFFFFF</color>
+    <color name="list_background_pressed">#C8C8C8</color>
+    <color name="list_divider">#272727</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#c5c4c4</color>
+    <color name="text_blue">#010066</color>
+    <color name="female">#8800B7</color>
+    <color name="male">#000066</color>
+    <color name="notiback">#CCCCFF</color>
+    <color name="link">#034AF3</color>
+    <color name="text_selection">#C6C6C6</color>
+    <color name="text_blue_pressed">#43419D</color>
+    <!-- sa -->
+    <color name="grey">#DFDCDC</color>
+    <color name="colorActivated">#caeeff</color>
+    <color name="primary">#C41230</color>
+    <color name="primaryDark">#9E0C24</color>
+    <color name="textPrimary">#000</color>
+    <color name="accent">#FFCCD4</color>
+    <color name="colorHighlight">#ffaaff</color>
+
+</resources>

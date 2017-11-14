@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+        <RelativeLayout
+        android:id="@+id/message_row_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         >
+
+        <CheckBox
+            android:id="@+id/message_row_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/texts1"
+            android:layout_height="wrap_content"
+            android:checked="false"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:button="@drawable/checkbox_selection"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+
+        <TextView
+            android:id="@+id/message_row_priority"
+            android:layout_width="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/texts1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/message_row_checkbox"
+            android:layout_alignParentTop="true"
+            android:text="!!"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+
+        <TextView
+            android:id="@+id/message_row_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/bigs"
+            android:text="From"
+            android:layout_toRightOf="@+id/message_row_priority"
+            android:layout_alignParentTop="true"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+
+        <TextView
+            android:id="@+id/message_row_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subject"
+            android:layout_below="@+id/message_row_from"
+            android:layout_alignLeft="@+id/message_row_from"
+            android:textColor="@color/texts1"
+            android:layout_gravity="center"
+            android:layout_toLeftOf="@+id/message_row_time_received"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
+
+        <TextView
+            android:id="@+id/message_row_time_received"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Received"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/texts1"
+            android:layout_gravity="center"
+            android:textSize="10sp" />
+</RelativeLayout>
+    <View 
+        android:id="@+id/background_divider"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"/>
+
+</LinearLayout>

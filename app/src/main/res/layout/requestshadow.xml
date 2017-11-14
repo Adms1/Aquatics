@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/shadow_background"
+    android:orientation="vertical" >
+    
+
+    <TextView
+        android:id="@+id/tv_rs_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+		android:layout_alignParentLeft="true"
+        android:text="Shadow Request"
+        android:background="#5481E6"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <!--android:text="Live Shadow Request"-->
+
+        <TextView
+            android:id="@+id/tv_rs_where"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_rs_title"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/texts1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Reason for requesting this student to be shadowed?" />
+       <!-- android:text="I am in pool" -->
+            
+        <Button
+            android:id="@+id/btn_rs_send_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_reason"
+            android:layout_centerHorizontal="true"
+			android:layout_marginTop="20dp"
+			android:paddingLeft="40dp"
+			android:paddingRight="40dp"
+			android:paddingTop="10dp"
+			android:paddingBottom="10dp"
+			android:textColor="@color/white"
+			android:textStyle="bold"
+			android:textSize="20sp"
+			android:text="Send Request"
+            android:background="#F26075" />
+
+<!--         <TableLayout
+            android:id="@+id/tl_requestshadow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_below="@+id/tv_rs_where"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentLeft="true" >
+        </TableLayout> -->
+        <EditText
+        android:id="@+id/txt_reason"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_below="@+id/tv_rs_where"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textarea_bg"
+        android:ems="10"
+        android:gravity="left|top|center_vertical"
+        android:imeOptions="actionDone"
+        android:inputType="textMultiLine"
+        android:maxLength="1000"
+        android:maxLines="5"
+        android:padding="10dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:text=""
+        android:textColor="@color/texts1"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_pool_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_rs_where"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+        </LinearLayout>
+        
+</RelativeLayout>

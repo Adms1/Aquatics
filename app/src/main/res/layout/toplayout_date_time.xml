@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:id="@+id/rl_menu_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/maintext"
+        android:orientation="horizontal" >
+	<ImageButton 
+	    android:id="@+id/btn_back"
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"
+	    android:src="@drawable/bck_btn_white"
+	    android:layout_gravity="center_vertical"
+	    android:layout_marginLeft="10dp"
+	    android:onClick="onClick"
+	    android:background="@null"/>
+        <TextView
+            android:id="@+id/tv_app_inst_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="15dp"
+            android:text="Christine"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_app_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="15dp"
+            android:text="MON"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_app_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="15dp"
+            android:text="04/14"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_app_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="15dp"
+            android:text="9:00 AM"
+            android:visibility="gone"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <DigitalClock
+            android:id="@+id/tv_app_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="15dp"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_app_logoff"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+			android:gravity="right"
+			android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_logoff"
+            android:paddingBottom="20dp"
+            android:paddingTop="15dp"
+            android:text="Log Off"
+            android:onClick="onClick"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,349 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".CreateNewMessageActivity" >
+
+    <ScrollView
+        android:id="@+id/sv_cm_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/rl_cm_from"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_cm_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:text="From:"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textColor="@color/texts1" />
+
+                <EditText
+                    android:id="@+id/et_cm_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/textarea_normal"
+                    android:hint="From:"
+                    android:imeOptions="actionDone"
+                    android:maxWidth="340dp"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:textColor="@color/texts1" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_site_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_site_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:text="Site:"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textColor="@color/texts1" />
+
+                <Button
+                    android:id="@+id/btn_site_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/selector_dropbox2"
+                    android:gravity="left|center_vertical"
+                    android:maxLines="1"
+                    android:maxWidth="340dp"
+                    android:onClick="onClick"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:textColor="@color/texts1" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_cm_to"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp" >
+
+                <Button
+                    android:id="@+id/btn_cm_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="@android:drawable/btn_default"
+                    android:onClick="onClick"
+                    android:text="To:"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textColor="@color/texts1" />
+
+                <TextView
+                    android:id="@+id/tv_cm_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/textarea_normal"
+                    android:maxLines="1"
+                    android:maxWidth="340dp"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="40dp"
+                    android:paddingTop="2dp"
+                    android:text=""
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:textColor="@color/texts1" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_cm_to_hide_show"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/tv_cm_to"
+                    android:layout_alignTop="@+id/tv_cm_to" >
+
+                    <ImageButton
+                        android:id="@+id/cm_show_to"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_navigation_expand"
+                        android:clickable="true"
+                        android:onClick="onClick" />
+
+                    <ImageButton
+                        android:id="@+id/cm_hide_to"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_navigation_collapse"
+                        android:clickable="true"
+                        android:onClick="onClick"
+                        android:visibility="invisible" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btn_cm_open_cc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/rl_cm_to_hide_show"
+                    android:background="@android:color/transparent"
+                    android:onClick="onClick"
+                    android:text="+ CC"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:textColor="@color/texts1" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_cm_cc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:visibility="gone" >
+
+                <Button
+                    android:id="@+id/btn_cm_cc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="@android:drawable/btn_default"
+                    android:onClick="onClick"
+                    android:text="CC:"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textColor="@color/texts1" />
+
+                <TextView
+                    android:id="@+id/tv_cm_cc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@drawable/textarea_normal"
+                    android:maxLines="1"
+                    android:maxWidth="340dp"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="40dp"
+                    android:paddingTop="2dp"
+                    android:text=""
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:textColor="@color/texts1" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_cm_cc_hide_show"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/tv_cm_cc"
+                    android:layout_alignTop="@+id/tv_cm_cc" >
+
+                    <ImageButton
+                        android:id="@+id/cm_show_cc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_navigation_expand"
+                        android:clickable="true"
+                        android:onClick="onClick" />
+
+                    <ImageButton
+                        android:id="@+id/cm_hide_cc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_navigation_collapse"
+                        android:clickable="true"
+                        android:onClick="onClick"
+                        android:visibility="invisible" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_cm_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_cm_from_subject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:text="Subject:"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textColor="@color/texts1" />
+
+                <EditText
+                    android:id="@+id/et_cm_subject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/textarea_normal"
+                    android:hint="Subject"
+                    android:imeOptions="actionDone"
+                    android:maxWidth="340dp"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:textColor="@color/texts1" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_cm_priority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_cm_priority"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:text="Priority:"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textColor="@color/texts1" />
+
+                <Button
+                    android:id="@+id/btn_cm_priority"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/selector_dropbox2"
+                    android:gravity="left|center_vertical"
+                    android:maxLines="1"
+                    android:maxWidth="340dp"
+                    android:onClick="onClick"
+                    android:paddingLeft="5dp"
+                    android:text=""
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:textColor="@color/texts1" />
+            </RelativeLayout>
+
+            <CheckBox
+                android:id="@+id/chb_cm_read_recipt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:button="@null"
+                android:drawablePadding="15dp"
+                android:drawableRight="@drawable/checkbox_selection"
+                android:text="Read Receipt"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:textColor="@color/texts1" />
+
+            <TextView
+                android:id="@+id/tv_cm_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/transparent"
+                android:onClick="onClick"
+                android:text="Message"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:textColor="@color/texts1" />
+
+            <EditText
+                android:id="@+id/et_cm_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/textarea_bg"
+                android:gravity="left|top"
+                android:hint="Compose message"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine"
+                android:maxWidth="520dp"
+                android:padding="5dp"
+                android:text=""
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textColor="@color/texts1" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

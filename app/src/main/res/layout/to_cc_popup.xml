@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/white" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/to_cc_site_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/spinner_dropdown_background"
+                android:gravity="left|center_vertical"
+                android:text="Site List"
+                android:maxLines="1"
+                android:paddingLeft="10dp"
+                android:paddingRight="80dp"
+                android:textColor="@color/texts1" />
+
+            <ListView
+                android:id="@+id/list_site_list"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:visibility="gone" >
+            </ListView>
+
+            <Button
+                android:id="@+id/to_cc_upper_managers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/spinner_dropdown_background"
+                android:gravity="left|center_vertical"
+                android:text="Upper Managers"
+                android:paddingLeft="10dp"
+                android:paddingRight="80dp"
+                android:textColor="@color/texts1" />
+
+            <ListView
+                android:id="@+id/list_upper_manager_list"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:choiceMode="multipleChoice"
+                android:visibility="gone" >
+            </ListView>
+            <Button
+                android:id="@+id/to_cc_managers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/spinner_dropdown_background"
+                android:gravity="left|center_vertical"
+                android:text="Managers"
+                android:paddingLeft="10dp"
+                android:paddingRight="80dp"
+                android:textColor="@color/texts1" />
+			<ListView
+                android:id="@+id/list_manager_list"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:choiceMode="multipleChoice"
+                android:visibility="gone" >
+            </ListView>
+            <Button
+                android:id="@+id/to_cc_office_staff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/spinner_dropdown_background"
+                android:gravity="left|center_vertical"
+                android:text="Office Staff"
+                android:paddingLeft="10dp"
+                android:paddingRight="80dp"
+                android:textColor="@color/texts1" />
+			<ListView
+                android:id="@+id/list_office_staff_list"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:choiceMode="multipleChoice"
+                android:visibility="gone" >
+            </ListView>
+            <Button
+                android:id="@+id/to_cc_instructors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/spinner_dropdown_background"
+                android:gravity="left|center_vertical"
+                android:text="Instructors"
+                android:paddingLeft="10dp"
+                android:paddingRight="80dp"
+                android:textColor="@color/texts1" />
+
+            <ListView
+                android:id="@+id/list_instructor_list"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:choiceMode="multipleChoice"
+                android:visibility="gone" >
+            </ListView>
+            
+            <Button
+                android:id="@+id/to_cc_deck_supervisor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/spinner_dropdown_background"
+                android:gravity="left|center_vertical"
+                android:text="Deck Supervisor"
+                android:paddingLeft="10dp"
+                android:paddingRight="80dp"
+                android:textColor="@color/texts1" />
+
+            <ListView
+                android:id="@+id/list_supervisor_list"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:choiceMode="multipleChoice"
+                android:visibility="gone" >
+            </ListView>
+            
+            <Button
+                android:id="@+id/to_cc_maintenance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/spinner_dropdown_background"
+                android:gravity="left|center_vertical"
+                android:text="Maintenance"
+                android:paddingLeft="10dp"
+                android:paddingRight="80dp"
+                android:textColor="@color/texts1" />
+
+            <ListView
+                android:id="@+id/list_maintenance_list"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:choiceMode="multipleChoice"
+                android:visibility="gone" >
+            </ListView>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btn_to_cc_ok"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink"
+                    android:text="Done"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_to_cc_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/pink"
+                    android:text="Cancel"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+	</LinearLayout>
+</ScrollView>
+</LinearLayout>
