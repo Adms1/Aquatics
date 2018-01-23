@@ -23,7 +23,17 @@
             <!--android:text="Loading wait..."-->
             <!--android:textColor="#212121"-->
             <!--android:textSize="50sp"-->
-        <!--android:visibility="gone"/>-->
+        <!--android:visibility="visible"/>-->
+        <com.romainpiel.shimmer.ShimmerTextView
+            android:id="@+id/my_text_view"
+            android:text="Loading wait..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@android:color/transparent"
+            android:textColor="#212121"
+            android:textSize="50sp" />
     </FrameLayout>
 
     <ScrollView
@@ -194,7 +204,7 @@
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault"
                 android:textColor="@color/texts1" />
 
-            <android.support.v7.widget.AppCompatAutoCompleteTextView
+            <AutoCompleteTextView
                 android:id="@+id/et_login_username"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -205,11 +215,12 @@
                 android:ems="10"
                 android:hint="Username"
                 android:imeOptions="actionNext"
+                android:maxLength="20"
                 android:maxLines="1"
                 android:paddingLeft="70dp"
                 android:singleLine="true"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:textColor="@color/texts" />
+                android:textColor="@color/texts"/>
 
             <EditText
                 android:id="@+id/et_login_password"
@@ -229,7 +240,8 @@
                 android:paddingLeft="70dp"
                 android:singleLine="true"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:textColor="@color/texts" >
+                android:textColor="@color/texts"
+                >
 
                 <!-- android:imeOptions="actionDone|flagNoEnterAction" -->
             </EditText>

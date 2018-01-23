@@ -25,6 +25,9 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -77,8 +80,10 @@ public class NewModifyComments extends Activity implements OnClickListener {
 			"21","22","23","24","25","26","27","28","29","30","31"));
 	ArrayList<String> d_Month = new ArrayList<String>(Arrays.asList("Keep","1","2","3","4","5","6","7","8","9","10","11","12"));
 	ArrayList<String> d_year = new ArrayList<String>();
-	Titanic titanic;
-	TitanicTextView tv ;
+//	Titanic titanic;
+//	TitanicTextView tv ;
+	Shimmer shimmer;
+	ShimmerTextView tv;
 	FrameLayout fl_modify_comments_loading;
 	ImageButton btn_back;
 	Thread t;
@@ -100,8 +105,11 @@ public class NewModifyComments extends Activity implements OnClickListener {
 		Initialization();
 		WW_StaticClass.duration1 = 300;
 		 WW_StaticClass.duration2 = 1000;
-		 titanic = new Titanic();
-		 titanic.start(tv);
+//		 titanic = new Titanic();
+//		 titanic.start(tv);
+
+		shimmer=new Shimmer();
+		shimmer.start(tv);
 		t = new Thread() {
 
 	        @Override
@@ -218,7 +226,7 @@ public class NewModifyComments extends Activity implements OnClickListener {
 	}
 	private void Initialization() {
 		// TODO Auto-generated method stub
-		tv = (TitanicTextView) findViewById(R.id.my_text_view);
+		tv = (ShimmerTextView) findViewById(R.id.my_text_view);
 		 tv.setTypeface(Typefaces.get(NewModifyComments.this, "Satisfy-Regular.ttf"));
 		 fl_modify_comments_loading = (FrameLayout)findViewById(R.id.modify_comments_loading);
 		 fl_modify_comments_loading.setVisibility(View.GONE);

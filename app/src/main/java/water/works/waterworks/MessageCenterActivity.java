@@ -42,6 +42,9 @@ import android.widget.PopupWindow.OnDismissListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
+
 import net.frederico.showtipsview.ShowTipsBuilder;
 import net.frederico.showtipsview.ShowTipsView;
 import net.frederico.showtipsview.ShowTipsViewInterface;
@@ -111,9 +114,11 @@ public class MessageCenterActivity extends Activity {
 
     private View decorView;
     private int uiOptions;
-    Titanic titanic;
-    /// /	TitanicTextView tv ;
-    TextView tv;
+    //    Titanic titanic;
+    //	TitanicTextView tv ;
+    Shimmer shimmer;
+    ShimmerTextView tv;
+
     FrameLayout fl_msgcntr_loading;
 
     @SuppressLint("InlinedApi")
@@ -133,8 +138,7 @@ public class MessageCenterActivity extends Activity {
         setContentView(R.layout.activity_message_center);
         isInternetPresent = Utility
                 .isNetworkConnected(MessageCenterActivity.this);
-//		tv = (TitanicTextView) findViewById(R.id.my_text_view);
-        tv = (TextView) findViewById(R.id.my_text_view);
+        tv = (ShimmerTextView) findViewById(R.id.my_text_view);
         tv.setTypeface(Typefaces.get(MessageCenterActivity.this, "Satisfy-Regular.ttf"));
         fl_msgcntr_loading = (FrameLayout) findViewById(R.id.msg_cntr_loading);
         fl_msgcntr_loading.setVisibility(View.GONE);
@@ -143,6 +147,8 @@ public class MessageCenterActivity extends Activity {
 //        titanic = new Titanic();
 //        titanic.start(tv);
 
+        shimmer = new Shimmer();
+        shimmer.start(tv);
         mTitle = mDrawerTitle = getTitle();
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         lldrawercontent = (LinearLayout) findViewById(R.id.lldrawercontent);
@@ -349,7 +355,7 @@ public class MessageCenterActivity extends Activity {
             switch (item.getItemId()) {
                 case R.id.action_new_mail:
                 /* Toast.makeText(getApplicationContext(), "Work in..",
-				 1).show();*/
+                 1).show();*/
                     Intent itnewmailIntent = new Intent(MessageCenterActivity.this,
                             CreateNewMessageActivity.class);
                     itnewmailIntent.putExtra("IAMFOR", "CREATE");

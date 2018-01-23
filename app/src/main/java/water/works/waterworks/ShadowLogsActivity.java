@@ -25,6 +25,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -58,8 +61,10 @@ public class ShadowLogsActivity extends Activity implements OnClickListener {
 		java.util.Date noteTS;
 		String time;
 		String day_name;
-		Titanic titanic;
-		TitanicTextView tv ;
+//		Titanic titanic;
+//		TitanicTextView tv ;
+	Shimmer shimmer;
+	ShimmerTextView tv;
 		FrameLayout fl_shadow_loading;
 		ImageButton btn_back;
 		Thread t;
@@ -82,8 +87,10 @@ public class ShadowLogsActivity extends Activity implements OnClickListener {
 		Initialization();
 		WW_StaticClass.duration1 = 300;
 		 WW_StaticClass.duration2 = 1000;
-		 titanic = new Titanic();
-		 titanic.start(tv);
+//		 titanic = new Titanic();
+//		 titanic.start(tv);
+			shimmer=new Shimmer();
+			shimmer.start(tv);
 		t = new Thread() {
 
 	        @Override
@@ -188,7 +195,7 @@ public class ShadowLogsActivity extends Activity implements OnClickListener {
 
 	private void Initialization() {
 		// TODO Auto-generated method stub
-		tv = (TitanicTextView) findViewById(R.id.my_text_view);
+		tv = (ShimmerTextView) findViewById(R.id.my_text_view);
 		 tv.setTypeface(Typefaces.get(ShadowLogsActivity.this, "Satisfy-Regular.ttf"));
 		 fl_shadow_loading = (FrameLayout)findViewById(R.id.shadow_loading);
 		 fl_shadow_loading.setVisibility(View.GONE);

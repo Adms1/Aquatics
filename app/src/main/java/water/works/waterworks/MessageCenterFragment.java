@@ -24,6 +24,8 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener2;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -62,8 +64,10 @@ public class MessageCenterFragment extends ListFragment implements OnRefreshList
     ArrayList<String> OtherUser = new ArrayList<String>();
     int old_pos = 0;
     //	TitanicTextViewtv ;
-    TextView tv;
-    Titanic titanic;
+//    Titanic titanic;
+
+    Shimmer shimmer;
+    ShimmerTextView tv;
     Boolean isInternetPresent = false;
 
     public MessageCenterFragment() {
@@ -85,7 +89,7 @@ public class MessageCenterFragment extends ListFragment implements OnRefreshList
         WW_StaticClass.duration2 = 3000;
         Log.e(TAG, WW_StaticClass.lable);
         Log.e(TAG, "Here = " + WW_StaticClass.Folder_id);
-        titanic = new Titanic();
+        shimmer = new Shimmer();
         isInternetPresent = Utility
                 .isNetworkConnected(getActivity());
         if (isInternetPresent) {
@@ -141,8 +145,7 @@ public class MessageCenterFragment extends ListFragment implements OnRefreshList
         lv_messages = (PullToRefreshListView) rootView.findViewById(R.id.message_list);
         listview = lv_messages.getRefreshableView();
         lv_messages.setMode(Mode.PULL_FROM_START);
-//		 tv = (TitanicTextView)rootView.findViewById(R.id.my_text_view);
-        tv = (TextView) rootView.findViewById(R.id.my_text_view);
+		 tv = (ShimmerTextView) rootView.findViewById(R.id.my_text_view);
         tv.setTypeface(Typefaces.get(getActivity(), "Satisfy-Regular.ttf"));
     }
 
@@ -156,6 +159,7 @@ public class MessageCenterFragment extends ListFragment implements OnRefreshList
             super.onPreExecute();
             fl_loading = (FrameLayout) rootView.findViewById(R.id.fragment_message_progress);
 //            titanic.start(tv);
+            shimmer.start(tv);
             fl_loading.setVisibility(View.VISIBLE);
             fl_loading.bringToFront();
         }

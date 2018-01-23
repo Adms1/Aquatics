@@ -31,6 +31,9 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -90,8 +93,11 @@ public class ViewScheduleDeckSupervisorActivity extends Activity implements OnCl
 	ViewScheduleDeckSupervisorAdapter adapter;
 	List<ViewScheduleRow> itemData;
 	float width;
-	Titanic titanic;
-	TitanicTextView tv ;
+//	Titanic titanic;
+//	TitanicTextView tv ;
+
+	ShimmerTextView tv;
+	Shimmer shimmer;
 	public static FrameLayout vs_loading;
 	int viewpos;
 	int wu_avail =2;
@@ -127,8 +133,10 @@ public class ViewScheduleDeckSupervisorActivity extends Activity implements OnCl
 	        currentDateandTime = format.format(date);
 			WW_StaticClass.duration1 = 300;
 			 WW_StaticClass.duration2 = 1000;
-			 titanic = new Titanic();
-			 titanic.start(tv);
+//			 titanic = new Titanic();
+//			 titanic.start(tv);
+			 shimmer = new Shimmer();
+			 shimmer.start(tv);
 			 new GetLevel().execute();
 			swipelistview.setSwipeListViewListener(new BaseSwipeListViewListener() {
 	            @Override
@@ -344,7 +352,7 @@ public class ViewScheduleDeckSupervisorActivity extends Activity implements OnCl
 			btn_back.setVisibility(View.VISIBLE);
 			btn_home.setVisibility(View.GONE);
 		}
-		tv = (TitanicTextView) findViewById(R.id.my_text_view);
+		tv = (ShimmerTextView) findViewById(R.id.my_text_view);
 		 tv.setTypeface(Typefaces.get(ViewScheduleDeckSupervisorActivity.this, "Satisfy-Regular.ttf"));
 		 vs_loading = (FrameLayout)findViewById(R.id.vs_loading);
 		 vs_loading.setVisibility(View.GONE);

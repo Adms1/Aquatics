@@ -30,6 +30,9 @@ import android.widget.ListPopupWindow;
 import android.widget.TableRow.LayoutParams;
 import android.widget.TextView;
 
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -57,8 +60,11 @@ public class GetAllInstructorActivity extends Activity implements OnClickListene
 	ImageView iv_turbo;
 	java.util.Date noteTS;
 	Boolean isInternetPresent = false;
-	Titanic titanic;
-	TitanicTextView tv ;
+//	Titanic titanic;
+//	TitanicTextView tv ;
+
+	Shimmer shimmer;
+	ShimmerTextView tv;
 	String time;
 	FrameLayout fl_award_turbo_loading;
 	public static String TAG="GetAllInstructorActivity";
@@ -117,8 +123,11 @@ public class GetAllInstructorActivity extends Activity implements OnClickListene
 		initialize();		
 		 WW_StaticClass.duration1 = 300;
 		 WW_StaticClass.duration2 = 1000;
-		 titanic = new Titanic();
-		 titanic.start(tv);
+//		 titanic = new Titanic();
+//		 titanic.start(tv);
+
+			shimmer=new Shimmer();
+			shimmer.start(tv);
 		///////////////////////
 		
 		t = new Thread() {
@@ -169,7 +178,7 @@ public class GetAllInstructorActivity extends Activity implements OnClickListene
 	
 	private void initialize() {
 		// TODO Auto-generated method stub
-		tv = (TitanicTextView) findViewById(R.id.my_text_view);
+		tv = (ShimmerTextView) findViewById(R.id.my_text_view);
 		 tv.setTypeface(Typefaces.get(GetAllInstructorActivity.this, "Satisfy-Regular.ttf"));
 		 fl_award_turbo_loading = (FrameLayout)findViewById(R.id.getall_inst_loading);
 		 fl_award_turbo_loading.setVisibility(View.GONE);

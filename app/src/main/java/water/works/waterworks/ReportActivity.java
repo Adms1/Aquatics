@@ -192,7 +192,7 @@ public class ReportActivity extends Activity implements OnClickListener {
 							DetailReportActivity.class);
 					i.putExtra("FROM", "");
 					i.putExtra("url",
-							"http://reports.waterworksswim.com/reports/office/peer.php?type=A&uid=jon"
+							"http://reports.waterworksswim.com/reports/office/peer.php?type=A&uid="
 									+ WW_StaticClass.UserName);
 					startActivity(i);
 

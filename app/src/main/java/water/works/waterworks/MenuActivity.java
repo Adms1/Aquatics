@@ -29,6 +29,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -74,8 +77,10 @@ public class MenuActivity extends Activity implements OnClickListener {
 	TextView tv_GetAnnouncements;
 	ViewPager myPager;
 	Boolean isInternetPresent = false;
-	Titanic titanic;
-	TitanicTextView tv ;
+//	Titanic titanic;
+//	TitanicTextView tv ;
+	Shimmer shimmer;
+	ShimmerTextView tv;
 	FrameLayout fl_menu_loading;
 	//RelativeLayout menu_main;
 //	private View decorView;
@@ -160,8 +165,11 @@ public class MenuActivity extends Activity implements OnClickListener {
 		initialize();	
 		WW_StaticClass.duration1 = 300;
 		WW_StaticClass.duration2 = 1000;
-		titanic = new Titanic();
-		titanic.start(tv);
+//		titanic = new Titanic();
+//		titanic.start(tv);
+
+		shimmer=new Shimmer();
+		shimmer.start(tv);
 		//		new DataLoad().execute();
 		///////////////////////
 
@@ -281,8 +289,9 @@ public class MenuActivity extends Activity implements OnClickListener {
 					else if(position==8){
 						Intent i =  new Intent(getApplicationContext(),DetailReportActivity.class);
 						i.putExtra("FROM", "");
-						i.putExtra("url", "http://forms.waterworksswim.com/survey_office/peer.php?type=A&uid="+WW_StaticClass.UserName);
+						i.putExtra("url", "http://reports.waterworksswim.com/reports/office/peer.php?type=O&uid="+WW_StaticClass.UserName);
 						//					i.putExtra("url", "http://192.168.1.201/survey_office/peer.php?type=A&uid="+WW_StaticClass.UserName);
+//						http://forms.waterworksswim.com/survey_office/peer.php?type=A&uid=
 						startActivity(i);
 
 					}
@@ -342,7 +351,7 @@ public class MenuActivity extends Activity implements OnClickListener {
 					else if(position==6){
 						Intent i =  new Intent(getApplicationContext(),DetailReportActivity.class);
 						i.putExtra("FROM", "");
-						i.putExtra("url", "http://forms.waterworksswim.com/survey_office/peer.php?type=A&uid="+WW_StaticClass.UserName);
+						i.putExtra("url", "http://reports.waterworksswim.com/reports/office/peer.php?type=O&uid="+WW_StaticClass.UserName);
 						//						i.putExtra("url", "http://192.168.1.201/survey_office/peer.php?type=A&uid="+WW_StaticClass.UserName);
 						startActivity(i);
 					}
@@ -398,7 +407,7 @@ public class MenuActivity extends Activity implements OnClickListener {
 					else if(position==6){
 						Intent i =  new Intent(getApplicationContext(),DetailReportActivity.class);
 						i.putExtra("FROM", "");
-						i.putExtra("url", "http://forms.waterworksswim.com/survey_office/peer.php?type=A&uid="+WW_StaticClass.UserName);
+						i.putExtra("url", "http://reports.waterworksswim.com/reports/office/peer.php?type=O&uid="+WW_StaticClass.UserName);
 						//						i.putExtra("url", "http://192.168.1.201/survey_office/peer.php?type=A&uid="+WW_StaticClass.UserName);
 						startActivity(i);
 					}
@@ -483,7 +492,7 @@ public class MenuActivity extends Activity implements OnClickListener {
 		
 		chat = (ImageView)findViewById(R.id.chat);
 		
-		tv = (TitanicTextView) findViewById(R.id.my_text_view);
+		tv = (ShimmerTextView) findViewById(R.id.my_text_view);
 		tv.setTypeface(Typefaces.get(MenuActivity.this, "Satisfy-Regular.ttf"));
 		fl_menu_loading = (FrameLayout)findViewById(R.id.menu_loading);
 		fl_menu_loading.setVisibility(View.GONE);

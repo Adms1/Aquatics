@@ -11,8 +11,7 @@ repositories {
     maven { url 'http://ksoap2-android.googlecode.com/svn/m2-repo' }
 }
 android {
-    compileSdkVersion 23
-    buildToolsVersion '25.0.0'
+    compileSdkVersion 26
 
     aaptOptions.cruncherEnabled = false
     aaptOptions.useNewCruncher = false
@@ -20,9 +19,9 @@ android {
     defaultConfig {
         applicationId "water.works.waterworks"
         minSdkVersion 15
-        targetSdkVersion 23
-        versionCode 35
-        versionName "3.6.7.8"
+        targetSdkVersion 26
+        versionCode 39
+        versionName "3.6.8.1"
         multiDexEnabled true
         useLibrary 'org.apache.http.legacy'
 
@@ -65,10 +64,14 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.0'
 
     compile 'com.pubnub:pubnub-android:3.7.2'
-    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile "com.android.support:support-core-utils:27.0.2"
+
+    compile 'com.android.support:appcompat-v7:26.0.0'
+    compile 'com.android.support:support-v4:26.0.0'
     compile 'com.android.support:multidex:1.0.1'
     compile 'net.fredericosilva:showTipsView:1.0.4'
     compile 'com.google.android.gms:play-services:8.1.0'
 //    compile files('libs/nineoldandroids-2.4.0.jar')
-    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.nineoldandroids:library:2.4.0+'
+    compile 'com.romainpiel.shimmer:library:1.4.0@aar'
 }

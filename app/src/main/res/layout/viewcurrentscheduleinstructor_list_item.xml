@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <!-- <RelativeLayout
             android:id="@+id/rl_view_current_lesson_bar"
@@ -147,11 +147,35 @@
                 android:textColor="@color/texts1"
                 android:visibility="gone" />
         </RelativeLayout> -->
+    <RelativeLayout
+        android:id="@+id/rl_cl_third_bar_row3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text"
+        android:visibility="gone">
 
+        <RelativeLayout
+            android:id="@+id/rl_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_cl_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Time"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:paddingBottom="3dp"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+        </RelativeLayout>
+    </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rl_view_current_lesson_bar" >
+        android:layout_below="@+id/rl_cl_third_bar_row3">
 
         <CheckBox
             android:id="@+id/selection"
@@ -182,7 +206,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_instructorname_row"
-            android:layout_marginTop="2dp" >
+            android:layout_marginTop="2dp">
 
             <LinearLayout
                 android:id="@+id/rl_name_camera"
@@ -190,7 +214,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/tv_cl_age_row" >
+                android:layout_toLeftOf="@+id/tv_cl_age_row">
 
                 <ImageView
                     android:id="@+id/btn_isa_alert"
@@ -206,7 +230,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical" >
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/tv_cl_studentname_row"
@@ -342,7 +366,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
                 android:layout_toLeftOf="@+id/tv_cl_paid_cls_row"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/ib_sub_sch_level"
@@ -359,9 +383,9 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@+id/chb_cl_wbr_w"
+                    android:layout_weight="1"
                     android:background="@drawable/spinner_background_ab_example"
                     android:editable="false"
-                    android:layout_weight="1"
                     android:gravity="left|center_vertical"
                     android:maxWidth="80dp"
                     android:paddingLeft="3dp"
@@ -398,7 +422,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
                 android:layout_toLeftOf="@+id/ll_cl_sched_level"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/ib_sub_level"
@@ -485,7 +509,7 @@
             android:id="@+id/rl_cl_secound_bar_row2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/rl_cl_secound_bar_row" >
+            android:layout_below="@+id/rl_cl_secound_bar_row">
 
             <Button
                 android:id="@+id/btn_swim_comp"
@@ -536,7 +560,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="2dp"
-                android:layout_toLeftOf="@+id/btn_cake" >
+                android:layout_toLeftOf="@+id/btn_cake">
 
                 <ImageButton
                     android:id="@+id/btn_cl_note"
@@ -589,6 +613,8 @@
                 android:gravity="left|center_vertical"
                 android:textColor="@color/black" />
         </RelativeLayout>
+
+
     </RelativeLayout>
 
 </LinearLayout>

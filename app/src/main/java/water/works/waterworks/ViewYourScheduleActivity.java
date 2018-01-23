@@ -23,6 +23,9 @@ import android.widget.ListPopupWindow;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.ksoap2.SoapEnvelope;
@@ -57,8 +60,10 @@ public class ViewYourScheduleActivity extends Activity implements OnClickListene
 	String am_pm;
 	Date noteTS;
 	String time;
-	Titanic titanic;
-	TitanicTextView tv ;
+//	Titanic titanic;
+//	TitanicTextView tv ;
+	Shimmer shimmer;
+	ShimmerTextView tv;
 	public static FrameLayout fl_ts_loading;
 	Boolean isInternetPresent = false;
 	ListView lv_ts_data;
@@ -139,8 +144,10 @@ public class ViewYourScheduleActivity extends Activity implements OnClickListene
 				SetScreenDetails();
 				WW_StaticClass.duration1 = 300;
 				 WW_StaticClass.duration2 = 1000;
-				 titanic = new Titanic();
-				 titanic.start(tv);
+//				 titanic = new Titanic();
+//				 titanic.start(tv);
+			 shimmer=new Shimmer();
+			 shimmer.start(tv);
 				 String deleteornot = getIntent().getStringExtra("DELETE");
 					if(deleteornot.equalsIgnoreCase("YES")){
 						SingleOptionAlertWithoutTitle.ShowAlertDialog(
@@ -203,7 +210,7 @@ public class ViewYourScheduleActivity extends Activity implements OnClickListene
 //	}
 	private void Initialization() {
 		// TODO Auto-generated method stub
-		tv = (TitanicTextView) findViewById(R.id.my_text_view);
+		tv = (ShimmerTextView) findViewById(R.id.my_text_view);
 		tv.setTypeface(Typefaces.get(ViewYourScheduleActivity.this, "Satisfy-Regular.ttf"));
 		fl_ts_loading = (FrameLayout)findViewById(R.id.view_today_schedule_loading);
 		fl_ts_loading.setVisibility(View.GONE);

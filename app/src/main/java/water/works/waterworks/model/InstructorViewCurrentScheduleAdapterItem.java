@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class InstructorViewCurrentScheduleAdapterItem {
 	public static Button btn_send_att;
 	int wu_avail;
-	String ExistSwimComp, IsShowSmCampStatus, att, wu_attendancetaken,
+	String CheckValue,FormatStTimeMin, ExistSwimComp, IsShowSmCampStatus, att, wu_attendancetaken,
 			ISAAlert, SScheduleID, IScheduleID, InstructorID, lessontypeid,
 			SAge, SLevel, ScheLevel, StudentID, OrderDetailID, StTimeHour,
 			StTimeMin, SLastName, SFirstName, wu_count, wu_Prev, wu_Next,
@@ -19,7 +19,7 @@ public class InstructorViewCurrentScheduleAdapterItem {
 
 	ArrayList<String> PreReqID, Abbr, PreReqChecked, LevelName, LevelID;
 
-	public InstructorViewCurrentScheduleAdapterItem(int wu_avail, String existSwimComp,
+	public InstructorViewCurrentScheduleAdapterItem(int wu_avail,String checkValue,String formatStTimeMin, String existSwimComp,
 			String isShowSmCampStatus, String att, String wu_attendancetaken,
 			String iSAAlert, String sScheduleID, String iScheduleID,
 			String instructorID, String lessontypeid, String sAge,
@@ -39,6 +39,8 @@ public class InstructorViewCurrentScheduleAdapterItem {
 			String PaidClasses) {
 		super();
 		this.wu_avail = wu_avail;
+		FormatStTimeMin=formatStTimeMin;
+		CheckValue=checkValue;
 		ExistSwimComp = existSwimComp;
 		IsShowSmCampStatus = isShowSmCampStatus;
 		this.att = att;
@@ -95,6 +97,22 @@ public class InstructorViewCurrentScheduleAdapterItem {
 
 	public void setWu_avail(int wu_avail) {
 		this.wu_avail = wu_avail;
+	}
+
+	public String getFormatStTimeMin() {
+		return FormatStTimeMin;
+	}
+
+	public void setFormatStTimeMin(String formatStTimeMin) {
+		FormatStTimeMin = formatStTimeMin;
+	}
+
+	public String getCheckValue() {
+		return CheckValue;
+	}
+
+	public void setCheckValue(String checkValue) {
+		CheckValue = checkValue;
 	}
 
 	public String getExistSwimComp() {

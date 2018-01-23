@@ -10,13 +10,24 @@
     android:layout_height="match_parent"
     android:visibility="gone"
     android:background="#80000000">
-    <customlibrary.TitanicTextView
+    <!--<customlibrary.TitanicTextView-->
+        <!--android:id="@+id/my_text_view"-->
+        <!--android:text="Loading wait..."-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:gravity="center"-->
+        <!--android:background="@android:color/transparent"-->
+        <!--android:textColor="#212121"-->
+        <!--android:textSize="50sp" />-->
+    <com.romainpiel.shimmer.ShimmerTextView
         android:id="@+id/my_text_view"
         android:text="Loading wait..."
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
+        android:layout_centerInParent="true"
         android:background="@android:color/transparent"
         android:textColor="#212121"
         android:textSize="50sp" />

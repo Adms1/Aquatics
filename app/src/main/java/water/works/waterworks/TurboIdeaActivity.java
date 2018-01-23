@@ -23,6 +23,9 @@ import android.widget.FrameLayout;
 import android.widget.ListPopupWindow;
 import android.widget.TextView;
 
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,8 +38,7 @@ import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import water.works.waterworks.customlibrary.Titanic;
-import water.works.waterworks.customlibrary.TitanicTextView;
+
 import water.works.waterworks.services.DeckNotificationService;
 import water.works.waterworks.utils.SOAP_CONSTANTS;
 import water.works.waterworks.utils.SingleOptionAlertWithoutTitle;
@@ -62,8 +64,10 @@ public class TurboIdeaActivity extends Activity implements OnClickListener {
 	Button btn_tidea_site;
 	EditText et_message_body,et_idea_tital;
 	Thread t;
-	Titanic titanic;
-	TitanicTextView tv ;
+//	Titanic titanic;
+//	TitanicTextView tv ;
+	Shimmer shimmer;
+	ShimmerTextView tv;
 	FrameLayout fl_turbo_idea_loading;
 	String messagestr,subjectstr;
 	@Override
@@ -111,8 +115,10 @@ public class TurboIdeaActivity extends Activity implements OnClickListener {
 		initialize();
 		WW_StaticClass.duration1 = 300;
 		WW_StaticClass.duration2 = 1000;
-		titanic = new Titanic();
-		titanic.start(tv);
+//		titanic = new Titanic();
+//		titanic.start(tv);
+		shimmer=new Shimmer();
+		shimmer.start(tv);
 		///////////////////////
 
 		t = new Thread() {
@@ -183,7 +189,7 @@ public class TurboIdeaActivity extends Activity implements OnClickListener {
 	}
 
 	private void initialize() {
-		tv = (TitanicTextView) findViewById(R.id.my_text_view);
+		tv = (ShimmerTextView) findViewById(R.id.my_text_view);
 		tv.setTypeface(Typefaces.get(TurboIdeaActivity.this, "Satisfy-Regular.ttf"));
 		fl_turbo_idea_loading = (FrameLayout)findViewById(R.id.turbo_idea_loading);
 		fl_turbo_idea_loading.setVisibility(View.GONE);

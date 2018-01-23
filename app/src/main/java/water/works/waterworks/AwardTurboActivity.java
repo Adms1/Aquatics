@@ -25,6 +25,9 @@ import android.widget.ImageView;
 import android.widget.ListPopupWindow;
 import android.widget.TextView;
 
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,8 +39,6 @@ import org.ksoap2.transport.HttpTransportSE;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import water.works.waterworks.customlibrary.Titanic;
-import water.works.waterworks.customlibrary.TitanicTextView;
 import water.works.waterworks.services.DeckNotificationService;
 import water.works.waterworks.utils.SOAP_CONSTANTS;
 import water.works.waterworks.utils.SingleOptionAlertWithoutTitle;
@@ -68,8 +69,11 @@ public class AwardTurboActivity extends Activity implements OnClickListener {
 	ListPopupWindow sitenameList,towhomList;
 	Button btn_award_site,btn_award_towhom;
 	EditText et_message_body;
-	Titanic titanic;
-	TitanicTextView tv ;
+//	Titanic titanic;
+//	TitanicTextView tv ;
+
+	Shimmer shimmer;
+	ShimmerTextView tv;
 	FrameLayout fl_award_turbo_loading;
 	Thread t;
 	String et_message_bodyStr;
@@ -119,8 +123,11 @@ public class AwardTurboActivity extends Activity implements OnClickListener {
 			initialize();		
 			WW_StaticClass.duration1 = 300;
 			WW_StaticClass.duration2 = 1000;
-			titanic = new Titanic();
-			titanic.start(tv);
+//			titanic = new Titanic();
+//			titanic.start(tv);
+
+			shimmer=new Shimmer();
+			shimmer.start(tv);
 			///////////////////////
 
 			t = new Thread() {
@@ -195,7 +202,7 @@ public class AwardTurboActivity extends Activity implements OnClickListener {
 
 	private void initialize() {
 		// TODO Auto-generated method stub
-		tv = (TitanicTextView) findViewById(R.id.my_text_view);
+		tv = (ShimmerTextView) findViewById(R.id.my_text_view);
 		tv.setTypeface(Typefaces.get(AwardTurboActivity.this, "Satisfy-Regular.ttf"));
 		fl_award_turbo_loading = (FrameLayout)findViewById(R.id.award_turbo_loading);
 		fl_award_turbo_loading.setVisibility(View.GONE);

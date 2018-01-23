@@ -3,172 +3,201 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".TodaysSchedule_DeckSupervisorActivity" >
-    <FrameLayout 
-    android:id="@+id/ts_ds_loading"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:visibility="gone"
-    android:background="#80000000">
-    <customlibrary.TitanicTextView
-        android:id="@+id/my_text_view"
-        android:text="Loading wait..."
+    tools:context=".TodaysSchedule_DeckSupervisorActivity">
+
+    <FrameLayout
+        android:id="@+id/ts_ds_loading"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:background="@android:color/transparent"
-        android:textColor="#212121"
-        android:textSize="50sp" />
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone">
+        <!--<customlibrary.TitanicTextView-->
+        <!--android:id="@+id/my_text_view"-->
+        <!--android:text="Loading wait..."-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:gravity="center"-->
+        <!--android:background="@android:color/transparent"-->
+        <!--android:textColor="#212121"-->
+        <!--android:textSize="50sp" />-->
+        <com.romainpiel.shimmer.ShimmerTextView
+            android:id="@+id/my_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="Loading wait..."
+            android:textColor="#212121"
+            android:textSize="50sp" />
     </FrameLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-     <LinearLayout
-         android:id="@+id/rl_menu_top"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:background="@color/maintext"
-         android:orientation="horizontal" >
 
-         <ImageButton
-             android:id="@+id/btn_back"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center_vertical"
-             android:layout_marginLeft="10dp"
-             android:layout_marginTop="5dp"
-             android:layout_marginBottom="5dp"
-             android:background="@null"
-             android:onClick="onClick"
-             android:src="@drawable/bck_btn_white" />
-		<TextView
-             android:id="@+id/tv_ts_dc_title"
-             android:layout_width="wrap_content"
-             android:layout_height="match_parent"
-             android:layout_marginLeft="40dp"
-             android:text="Today's Schedule"
-             android:textColor="@android:color/white"
-             android:gravity="center_vertical"
-             android:textSize="20sp" />
-         <TextView
-             android:id="@+id/tv_ts_dc_day"
-             android:layout_width="wrap_content"
-             android:layout_height="match_parent"
-             android:layout_marginLeft="40dp"
-             android:text="MON"
-             android:gravity="center_vertical"
-             android:textColor="@android:color/white"
-             android:textSize="20sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-         <TextView
-             android:id="@+id/tv_ts_dc_date"
-             android:layout_width="wrap_content"
-             android:layout_height="match_parent"
-             android:layout_marginLeft="40dp"
-             android:text="04/14"
-             android:gravity="center_vertical"
-             android:textColor="@android:color/white"
-             android:textSize="20sp" />
+        <LinearLayout
+            android:id="@+id/rl_menu_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/maintext"
+            android:orientation="horizontal">
 
-         <DigitalClock
-             android:id="@+id/tv_ts_dc_time"
-             android:layout_width="wrap_content"
-             android:layout_height="match_parent"
-             android:layout_marginLeft="40dp"
-             android:textColor="@android:color/white"
-             android:gravity="center_vertical"
-             android:textSize="20sp" />
-         
-         <TextView
-             android:id="@+id/tv_ts_dc_name"
-             android:layout_width="0dp"
-             android:layout_height="match_parent"
-             android:paddingRight="20dp"
-             android:layout_weight="1"
-             android:text="Christine"
-             android:gravity="right|center_vertical"
-             android:textColor="@android:color/white"
-             android:textSize="20sp" />
-     </LinearLayout>
-    
-     <LinearLayout 
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_marginLeft="10dp"
-         android:layout_marginRight="10dp"
-         android:orientation="horizontal">
-         <TextView
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@null"
+                android:onClick="onClick"
+                android:src="@drawable/bck_btn_white" />
+
+            <TextView
+                android:id="@+id/tv_ts_dc_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:gravity="center_vertical"
+                android:text="Today's Schedule"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_ts_dc_day"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:gravity="center_vertical"
+                android:text="MON"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_ts_dc_date"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:gravity="center_vertical"
+                android:text="04/14"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <DigitalClock
+                android:id="@+id/tv_ts_dc_time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_ts_dc_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:paddingRight="20dp"
+                android:text="Christine"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="Instructor Name"
                 android:layout_weight="2"
-                android:textStyle="bold"
+                android:text="Instructor Name"
+                android:textColor="@color/texts1"
                 android:textSize="15sp"
-                android:textColor="@color/texts1" />
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="Student Name"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:textColor="@color/texts1" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.75"
-            android:text="Age"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="@color/texts1" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.75"
-            android:text="Level"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:textColor="@color/texts1" />
-		<TextView
-	            android:layout_width="0dp"
-	            android:layout_height="wrap_content"
-	            android:layout_weight="1"
-	            android:text="L Type"
-	            android:textStyle="bold"
-	            android:textSize="15sp"
-	            android:textColor="@color/texts1" />
-		<TextView 
+            <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Student Name"
                 android:textColor="@color/texts1"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.75"
+                android:text="Age"
+                android:textColor="@color/texts1"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.75"
+                android:text="Level"
+                android:textColor="@color/texts1"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="L Type"
+                android:textColor="@color/texts1"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_weight="2"
-                android:textStyle="bold"
+                android:text="Comment"
+                android:textColor="@color/texts1"
                 android:textSize="15sp"
-                android:text="Comment"/>
-     </LinearLayout>
-     
-     <!-- <ListView 
-         android:id="@+id/lv_ts_ds"
-         android:layout_width="match_parent"
-         android:layout_height="fill_parent"
-         android:divider="@color/black"
-         android:layout_marginBottom="20dp"
-         android:dividerHeight="1dp" /> -->
-     <com.handmark.pulltorefresh.library.PullToRefreshListView
-        android:id="@+id/lv_ts_ds"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault"
-        android:layout_margin="5dp"
-        android:fadingEdge="none"
-        android:smoothScrollbar="true" />
-     
-	</LinearLayout>
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- <ListView
+            android:id="@+id/lv_ts_ds"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:divider="@color/black"
+            android:layout_marginBottom="20dp"
+            android:dividerHeight="1dp" /> -->
+
+        <!--<com.handmark.pulltorefresh.library.PullToRefreshListView-->
+        <!--android:id="@+id/lv_ts_ds"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault"-->
+        <!--android:layout_margin="5dp"-->
+        <!--android:fadingEdge="none"-->
+        <!--android:focusable="true"-->
+        <!--android: -->
+        <!--chnage by megha 23/01/2018-->
+        <ListView
+            android:id="@+id/lv_ts_data"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white"
+            android:choiceMode="none"
+            android:focusable="true"
+            android:visibility="visible"></ListView>smoothScrollbar="true" />
+
+    </LinearLayout>
 </RelativeLayout>

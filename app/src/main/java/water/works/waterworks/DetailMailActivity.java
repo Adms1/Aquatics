@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -29,6 +30,9 @@ import android.widget.ImageButton;
 import android.widget.ListPopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -56,11 +60,13 @@ public class DetailMailActivity extends Activity implements OnClickListener {
 	ImageButton show_to, hide_to,show_cc, hide_cc,show_site, hide_site;
 	String FromUsername,Sitename,ToUsername,CCUsername,MsgTime,MsgSubject,Priority,MsgDetails
 	,FromUserID,ToUserID,CCUserID,strFrmmsg;
-	TextView tv_FromUsername,tv_Sitename,tv_ToUsername,tv_CCUsername,tv_MsgTime,tv_MsgSubject,tv_Priority,tv_MsgDetails;
+	TextView tv_FromUsername,tv_Sitename,tv_ToUsername,tv_CCUsername,tv_MsgTime,tv_MsgSubject,tv_Priority;
 	Boolean isInternetPresent = false;
-	Titanic titanic;
+//	Titanic titanic;
 //	TitanicTextView tv ;
-	TextView tv ;
+
+	Shimmer shimmer;
+	ShimmerTextView tv;
 	FrameLayout fl_detail_mail_loading;
 	ListPopupWindow list_edit_parent;
 	ArrayList<String> ParentID,Temp_FolderID,Temp_FolderName;
@@ -70,6 +76,7 @@ public class DetailMailActivity extends Activity implements OnClickListener {
 	String SelectedFolder_id;
 	String F_id;
 	String selected_folder_name_for_edit;
+	WebView tv_MsgDetails;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -83,6 +90,9 @@ public class DetailMailActivity extends Activity implements OnClickListener {
 		 WW_StaticClass.duration2 = 1000;
 //		 titanic = new Titanic();
 //		 titanic.start(tv);
+
+		shimmer=new Shimmer();
+		shimmer.start(tv);
 			Final_FolderName = new ArrayList<String>();
 			FolderName = new ArrayList<String>();
 			FolderID = new ArrayList<String>();
@@ -181,7 +191,7 @@ public class DetailMailActivity extends Activity implements OnClickListener {
 	private void Initialization() {
 		// TODO Auto-generated method stub
 //		 tv = (TitanicTextView) findViewById(R.id.my_text_view);
-		tv = (TextView) findViewById(R.id.my_text_view);
+		tv = (ShimmerTextView) findViewById(R.id.my_text_view);
 		 tv.setTypeface(Typefaces.get(DetailMailActivity.this, "Satisfy-Regular.ttf"));
 		 fl_detail_mail_loading = (FrameLayout)findViewById(R.id.mail_detail_loading);
 		 fl_detail_mail_loading.setVisibility(View.GONE);
@@ -199,7 +209,7 @@ public class DetailMailActivity extends Activity implements OnClickListener {
 		 hide_to = (ImageButton)findViewById(R.id.hide_to);
 		 hide_cc = (ImageButton)findViewById(R.id.hide_cc);
 		 hide_site = (ImageButton)findViewById(R.id.hide_site);
-		 tv_MsgDetails = (TextView)findViewById(R.id.detail_msg_msg);
+		 tv_MsgDetails = (WebView) findViewById(R.id.detail_msg_msg);
 		 
 	}
 	@Override
@@ -729,7 +739,9 @@ public class DetailMailActivity extends Activity implements OnClickListener {
 					tv_MsgTime.setText("Sent: "+MsgTime);
 					tv_ToUsername.setText("To: " + ToUsername);
 					tv_CCUsername.setText("CC: " + CCUsername);
-					tv_MsgDetails.setText(Html.fromHtml(MsgDetails));
+//					change by megha shah 05/01/2018
+//					tv_MsgDetails.setText(Html.fromHtml(MsgDetails));
+					tv_MsgDetails.loadData(MsgDetails, "text/html; charset=utf-8", null);//"UTF-8"
 				}
 			}
 		}

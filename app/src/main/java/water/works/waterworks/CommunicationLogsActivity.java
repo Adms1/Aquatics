@@ -20,6 +20,9 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.ksoap2.SoapEnvelope;
@@ -47,8 +50,10 @@ public class CommunicationLogsActivity extends Activity implements
 	String am_pm, time, sendinfo;
 	Date noteTS;
 	Thread t;
-	Titanic titanic;
-	TitanicTextView tv;
+//	Titanic titanic;
+//	TitanicTextView tv;
+	Shimmer shimmer;
+	ShimmerTextView tv;
 	FrameLayout fl_loading;
 	Button btn_app_logoff;
 	public static Button date_selection;
@@ -94,8 +99,11 @@ public class CommunicationLogsActivity extends Activity implements
 			initialize();
 			WW_StaticClass.duration1 = 300;
 			WW_StaticClass.duration2 = 1000;
-			titanic = new Titanic();
-			titanic.start(tv);
+//			titanic = new Titanic();
+//			titanic.start(tv);
+
+			shimmer=new Shimmer();
+			shimmer.start(tv);
 			// /////////////////////
 
 			t = new Thread() {
@@ -144,7 +152,7 @@ public class CommunicationLogsActivity extends Activity implements
 
 	private void initialize() {
 		// TODO Auto-generated method stub
-		tv = (TitanicTextView) findViewById(R.id.my_text_view);
+		tv = (ShimmerTextView) findViewById(R.id.my_text_view);
 		tv.setTypeface(Typefaces.get(CommunicationLogsActivity.this,
 				"Satisfy-Regular.ttf"));
 		fl_loading = (FrameLayout) findViewById(R.id.commu_loading);
