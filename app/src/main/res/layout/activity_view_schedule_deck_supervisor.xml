@@ -213,6 +213,8 @@
             swipe:swipeCloseAllItemsWhenMoveList="true"
             android:divider="@color/black"
             android:dividerHeight="2dp"
+            android:focusable="true"
+            android:choiceMode="none"
             swipe:swipeMode="both" />
             
 	</LinearLayout>    

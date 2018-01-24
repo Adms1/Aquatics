@@ -20,8 +20,8 @@ android {
         applicationId "water.works.waterworks"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 39
-        versionName "3.6.8.1"
+        versionCode 40
+        versionName "3.6.8.2"
         multiDexEnabled true
         useLibrary 'org.apache.http.legacy'
 
