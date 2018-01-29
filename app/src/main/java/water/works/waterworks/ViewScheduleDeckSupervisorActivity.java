@@ -113,6 +113,7 @@ public class ViewScheduleDeckSupervisorActivity extends Activity implements OnCl
     Thread t;
     LinearLayout ll_title;
     TextView lv_title;
+    String tempStHr, tempEndHr, tempStmin, tempEndmin;
     public static ArrayList<String> ManagerShadowID = new ArrayList<String>();
 
     @Override
@@ -871,32 +872,24 @@ public class ViewScheduleDeckSupervisorActivity extends Activity implements OnCl
                     //code by megha 24/-01-2018
                     swipelistview.clearFocus();
                     Calendar c = Calendar.getInstance();
+
                     try {
                         for (int i = 0; i < StTimeHour.size(); i++) {
-                            if ((c.get(Calendar.HOUR_OF_DAY) >= sttimehr
-                                    .get(i) && c.get(Calendar.HOUR_OF_DAY) <= endtimehr
-                                    .get(i))){
-                                if(endtimemin.get(i)==0){
-                                    if (c.get(Calendar.MINUTE) >= sttimemin
-                                            .get(i) && c.get(Calendar.MINUTE) <= 59) {
-                                        swipelistview.setSelection(i);
-                                    }
-                                }else{
-                                    if (c.get(Calendar.MINUTE) >= sttimemin
-                                            .get(i) && c
-                                            .get(Calendar.MINUTE) <= endtimemin
-                                            .get(i)) {
-                                        swipelistview.setSelection(i);
-                                    }
-//                                    else{
-//                                        if (c.get(Calendar.MINUTE) <= sttimemin
-//                                                .get(i) && c
-//                                                .get(Calendar.MINUTE) <= endtimemin
-//                                                .get(i)) {
-//                                            swipelistview.setSelection(i);
-//                                        }
-//                                    }
-                                }
+
+                            tempStHr = String.valueOf(sttimehr.get(i) + ":" + (sttimemin.get(i)));
+                            if (c.get(Calendar.MINUTE) >= 0 && c.get(Calendar.MINUTE) < 20) {
+                                tempEndHr = c.get(Calendar.HOUR_OF_DAY) + ":" + "0";
+                            } else if (c.get(Calendar.MINUTE) >= 20 && c.get(Calendar.MINUTE) < 40) {
+                                tempEndHr = c.get(Calendar.HOUR_OF_DAY) + ":" + "20";
+                            } else if (c.get(Calendar.MINUTE) >= 40) {
+                                tempEndHr = c.get(Calendar.HOUR_OF_DAY) + ":" + "40";
+                            }
+                            boolean check = checktimings(tempStHr, tempEndHr);
+
+                            Log.d("tempStHr", tempStHr + "tempEndHr" + tempEndHr + "check" + check + "index" + i);
+                            if (check) {
+                                swipelistview.setSelection(i);
+                                break;
                             }
                         }
                     } catch (Exception e) {
@@ -929,6 +922,28 @@ public class ViewScheduleDeckSupervisorActivity extends Activity implements OnCl
                 }
             }
         }
+    }
+
+    public boolean checktimings(String time, String endtime) {
+
+        String pattern = "HH:mm";
+        SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+
+        try {
+            Date date1 = sdf.parse(time);
+            Date date2 = sdf.parse(endtime);
+
+            Log.d("date1", "" + date1);
+            Log.d("date2", "" + date2);
+            if (date1.equals(date2)) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public AlertDialog ConnectionTimeOut() {

@@ -663,5 +663,7 @@ public class SwipeListView extends ListView {
         touchListener.closeOpenedItems();
     }
 
+    public void setBackgroundColor(String s) {
+    }
 }
 

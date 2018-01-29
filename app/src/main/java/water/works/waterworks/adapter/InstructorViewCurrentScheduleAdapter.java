@@ -372,7 +372,7 @@ public class InstructorViewCurrentScheduleAdapter extends BaseAdapter implements
                 }
 
             }
-            holder.tv_cl_time.setText(data.get(position).getStTimeHour()+":"+data.get(position).getFormatStTimeMin());
+            holder.tv_cl_time.setText(data.get(position).getFormatStTimeHour()+":"+data.get(position).getFormatStTimeMin());
             if (!data.get(position).getCheckValue().equalsIgnoreCase("0")) {
                 holder.rl_cl_third_bar_row3.setVisibility(View.VISIBLE);
             } else {

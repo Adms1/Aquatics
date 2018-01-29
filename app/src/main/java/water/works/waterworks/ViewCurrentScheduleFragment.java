@@ -71,6 +71,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
     ArrayList<String> Cls_Lvl = new ArrayList<String>();
     ArrayList<String> SiteID = new ArrayList<String>();
     ArrayList<String> CheckValue = new ArrayList<String>();
+    ArrayList<String> FormatStTimeHour = new ArrayList<String>();
     ArrayList<String> FormatStTimeMin = new ArrayList<String>();
     public ArrayList<String> SScheduleID = new ArrayList<String>();
     public ArrayList<String> IScheduleID = new ArrayList<String>();
@@ -150,7 +151,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
         super.onResume();
         //removed by aanal 26Aug2016
         /*if (isInternetPresent) {
-			if (commented) {
+            if (commented) {
 				ClearArray();
 				commented = false;
 				new GetLevel().execute();
@@ -221,7 +222,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 try {
-					/*
+                    /*
 					 * currentDateandTime = wu_Prev.get(0).toString(); if
 					 * (currentDateandTime.toString().equalsIgnoreCase("") ||
 					 * currentDateandTime.isEmpty()) {
@@ -247,7 +248,6 @@ public class ViewCurrentScheduleFragment extends Fragment implements
                     now.set(Calendar.YEAR, year);
                     now.set(Calendar.HOUR_OF_DAY, hour);
                     now.set(Calendar.MINUTE, min);
-
                     now.add(Calendar.MINUTE, (-20));
                     tempmonth = "" + (now.get(Calendar.MONTH));
                     tempday = "" + now.get(Calendar.DAY_OF_MONTH);
@@ -311,7 +311,9 @@ public class ViewCurrentScheduleFragment extends Fragment implements
                             + am_pm);
                     // /////////////////
                     ClearArray();
-                    new GetCurrentSchedule().execute();
+//                    change by megha 29-01-2018
+//                    new GetCurrentSchedule().execute();
+                    new GetCurrentScheduleFirstTime().execute();
 					/* } */
                 } catch (IndexOutOfBoundsException e) {
                     // TODO: handle exception
@@ -423,7 +425,9 @@ public class ViewCurrentScheduleFragment extends Fragment implements
                     tv_scheduletime.setText(temphour + ":" + tempmin + " "
                             + am_pm);
                     ClearArray();
-                    new GetCurrentSchedule().execute();
+//                    new GetCurrentSchedule().execute();
+//                    change by megha 29-01-2018
+                    new GetCurrentScheduleFirstTime().execute();
 					/* } */
                 } catch (IndexOutOfBoundsException e) {
                     // TODO: handle exception
@@ -646,6 +650,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
                         for (int i = 0; i < jArray2.length(); i++) {
                             jsonObject2 = jArray2.getJSONObject(i);
                             CheckValue.add(jsonObject2.getString("CheckValue"));
+                            FormatStTimeHour.add(jsonObject2.getString("FormateStTimeHour"));
                             FormatStTimeMin.add(jsonObject2.getString("FormatStTimeMin"));
                             ExistSwimComp.add(jsonObject2
                                     .getString("ExistSwimComp"));
@@ -766,7 +771,9 @@ public class ViewCurrentScheduleFragment extends Fragment implements
                     onDetectNetworkState().show();
                 } else if (connectionout) {
                     connectionout = false;
-                    new GetCurrentSchedule().execute();
+//                    new GetCurrentSchedule().execute();
+//                    change by megha 29-01-2018
+                    new GetCurrentScheduleFirstTime().execute();
                 } else {
 					/*
 					 * if (ISAFlag) { dayisa.setVisibility(View.VISIBLE);
@@ -862,7 +869,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
                             for (int i = 0; i < SAge.size(); i++) {
                                 att_Items
                                         .add(new InstructorViewCurrentScheduleAdapterItem(
-                                                wu_avail, CheckValue.get(i), FormatStTimeMin.get(i), ExistSwimComp.get(i),
+                                                wu_avail, CheckValue.get(i), FormatStTimeHour.get(i), FormatStTimeMin.get(i), ExistSwimComp.get(i),
                                                 IsShowSmCampStatus.get(i), att
                                                 .get(i),
                                                 wu_attendancetaken.get(i),
@@ -1069,6 +1076,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
                         for (int i = 0; i < jArray2.length(); i++) {
                             jsonObject2 = jArray2.getJSONObject(i);
                             CheckValue.add(jsonObject2.getString("CheckValue"));
+                            FormatStTimeHour.add(jsonObject2.getString("FormateStTimeHour"));
                             FormatStTimeMin.add(jsonObject2.getString("FormatStTimeMin"));
                             ExistSwimComp.add(jsonObject2
                                     .getString("ExistSwimComp"));
@@ -1189,7 +1197,9 @@ public class ViewCurrentScheduleFragment extends Fragment implements
                     onDetectNetworkState().show();
                 } else if (connectionout) {
                     connectionout = false;
-                    new GetCurrentSchedule().execute();
+//                    new GetCurrentSchedule().execute();
+//                    change by megha 29-01-2018
+                    new GetCurrentScheduleFirstTime().execute();
                 } else {
 					/*
 					 * if (ISAFlag) { dayisa.setVisibility(View.VISIBLE);
@@ -1285,7 +1295,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
                             for (int i = 0; i < SAge.size(); i++) {
                                 att_Items
                                         .add(new InstructorViewCurrentScheduleAdapterItem(
-                                                wu_avail, CheckValue.get(i), FormatStTimeMin.get(i), ExistSwimComp.get(i),
+                                                wu_avail, CheckValue.get(i), FormatStTimeHour.get(i), FormatStTimeMin.get(i), ExistSwimComp.get(i),
                                                 IsShowSmCampStatus.get(i), att
                                                 .get(i),
                                                 wu_attendancetaken.get(i),
@@ -1513,6 +1523,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
         wu_r.clear();
         SiteID.clear();
         CheckValue.clear();
+        FormatStTimeHour.clear();
         FormatStTimeMin.clear();
         Cls_Lvl.clear();
         newatt.clear();

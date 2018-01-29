@@ -357,7 +357,9 @@ public class ViewCurrentScheduleInstructorActivity extends Activity implements A
 								//									}
 								//								}
 								oldmin = newmin;
-								if (newmin == 0 || newmin == 20 || newmin == 40||newmin == 00) {
+								//change by megha 29-01-2018
+								//All newmin ==0 to 05 as it other
+								if (newmin == 05 || newmin == 25 || newmin == 45||newmin == 05) {
 									newmil = Calendar.getInstance().getTime()
 											.getSeconds();
 									if (count == 1 && newmil == oldmil) {
