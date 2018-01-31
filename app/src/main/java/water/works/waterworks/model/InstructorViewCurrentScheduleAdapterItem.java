@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class InstructorViewCurrentScheduleAdapterItem {
 	public static Button btn_send_att;
 	int wu_avail;
-	String CheckValue,FormatStTimeHour,FormatStTimeMin, ExistSwimComp, IsShowSmCampStatus, att, wu_attendancetaken,
+	String IsEmpty,CheckValue,FormatStTimeHour,FormatStTimeMin, ExistSwimComp, IsShowSmCampStatus, att, wu_attendancetaken,
 			ISAAlert, SScheduleID, IScheduleID, InstructorID, lessontypeid,
 			SAge, SLevel, ScheLevel, StudentID, OrderDetailID, StTimeHour,
 			StTimeMin, SLastName, SFirstName, wu_count, wu_Prev, wu_Next,
@@ -19,7 +19,7 @@ public class InstructorViewCurrentScheduleAdapterItem {
 
 	ArrayList<String> PreReqID, Abbr, PreReqChecked, LevelName, LevelID;
 
-	public InstructorViewCurrentScheduleAdapterItem(int wu_avail,String checkValue,String formatStTimeHour,String formatStTimeMin, String existSwimComp,
+	public InstructorViewCurrentScheduleAdapterItem(int wu_avail,String isempty,String checkValue,String formatStTimeHour,String formatStTimeMin, String existSwimComp,
 			String isShowSmCampStatus, String att, String wu_attendancetaken,
 			String iSAAlert, String sScheduleID, String iScheduleID,
 			String instructorID, String lessontypeid, String sAge,
@@ -39,6 +39,7 @@ public class InstructorViewCurrentScheduleAdapterItem {
 			String PaidClasses) {
 		super();
 		this.wu_avail = wu_avail;
+		this.IsEmpty=isempty;
 		FormatStTimeHour=formatStTimeHour;
 		FormatStTimeMin=formatStTimeMin;
 		CheckValue=checkValue;
@@ -90,6 +91,14 @@ public class InstructorViewCurrentScheduleAdapterItem {
 		this.SiteID = SiteID;
 		this.ClsLvl =ClsLvl;
 		this.PaidClasses = PaidClasses;
+	}
+
+	public String getIsEmpty() {
+		return IsEmpty;
+	}
+
+	public void setIsEmpty(String isEmpty) {
+		IsEmpty = isEmpty;
 	}
 
 	public int getWu_avail() {
@@ -507,5 +516,7 @@ public class InstructorViewCurrentScheduleAdapterItem {
 	public void setPaidClasses(String paidClasses) {
 		PaidClasses = paidClasses;
 	}
+
+
 
 }

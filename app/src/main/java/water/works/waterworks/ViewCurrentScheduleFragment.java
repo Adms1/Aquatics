@@ -59,6 +59,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
     TextView tv_view_current_lesson_error;
     String hour_for_data, min_for_data, date_for_data;
     int wu_avail = 2;
+
     public static ArrayList<Integer> newatt = new ArrayList<Integer>();
     public static ArrayList<Integer> oldatt = new ArrayList<Integer>();
     public ArrayList<String> LevelName = new ArrayList<String>();
@@ -70,6 +71,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
     public ArrayList<String> ISAAlert = new ArrayList<String>();
     ArrayList<String> Cls_Lvl = new ArrayList<String>();
     ArrayList<String> SiteID = new ArrayList<String>();
+    ArrayList<String> IsEmpty = new ArrayList<String>();
     ArrayList<String> CheckValue = new ArrayList<String>();
     ArrayList<String> FormatStTimeHour = new ArrayList<String>();
     ArrayList<String> FormatStTimeMin = new ArrayList<String>();
@@ -223,7 +225,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
                 // TODO Auto-generated method stub
                 try {
                     /*
-					 * currentDateandTime = wu_Prev.get(0).toString(); if
+                     * currentDateandTime = wu_Prev.get(0).toString(); if
 					 * (currentDateandTime.toString().equalsIgnoreCase("") ||
 					 * currentDateandTime.isEmpty()) {
 					 * SingleOptionAlertWithoutTitle.ShowAlertDialog(
@@ -869,7 +871,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
                             for (int i = 0; i < SAge.size(); i++) {
                                 att_Items
                                         .add(new InstructorViewCurrentScheduleAdapterItem(
-                                                wu_avail, CheckValue.get(i), FormatStTimeHour.get(i), FormatStTimeMin.get(i), ExistSwimComp.get(i),
+                                                wu_avail, IsEmpty.get(i), CheckValue.get(i), FormatStTimeHour.get(i), FormatStTimeMin.get(i), ExistSwimComp.get(i),
                                                 IsShowSmCampStatus.get(i), att
                                                 .get(i),
                                                 wu_attendancetaken.get(i),
@@ -1051,6 +1053,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
                 String resp = sp1.toString();
                 JSONObject jo = new JSONObject(resp);
                 wu_avail = jo.getInt("wu_avail");
+
                 if (wu_avail == 0) {
                     JSONArray jArray = jo.getJSONArray("Attendance");
                     JSONArray jArray2;
@@ -1065,6 +1068,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
                             MainScheduleDate.add(jsonObject2
                                     .getString("MainScheduleDate"));
                         }
+
                     }
                 } else if (wu_avail == 1 || wu_avail == 2) {
                     JSONArray jArray = jo.getJSONArray("Attendance");
@@ -1072,6 +1076,8 @@ public class ViewCurrentScheduleFragment extends Fragment implements
                     JSONObject jsonObject, jsonObject2, jsonObject3;
                     for (int k = 0; k < jArray.length(); k++) {
                         jsonObject = jArray.getJSONObject(k);
+
+                        IsEmpty.add(jsonObject.getString("IsEmpty"));
                         jArray2 = jsonObject.getJSONArray("Items");
                         for (int i = 0; i < jArray2.length(); i++) {
                             jsonObject2 = jArray2.getJSONObject(i);
@@ -1295,7 +1301,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
                             for (int i = 0; i < SAge.size(); i++) {
                                 att_Items
                                         .add(new InstructorViewCurrentScheduleAdapterItem(
-                                                wu_avail, CheckValue.get(i), FormatStTimeHour.get(i), FormatStTimeMin.get(i), ExistSwimComp.get(i),
+                                                wu_avail, IsEmpty.get(i), CheckValue.get(i), FormatStTimeHour.get(i), FormatStTimeMin.get(i), ExistSwimComp.get(i),
                                                 IsShowSmCampStatus.get(i), att
                                                 .get(i),
                                                 wu_attendancetaken.get(i),
@@ -1522,6 +1528,7 @@ public class ViewCurrentScheduleFragment extends Fragment implements
         wu_W.clear();
         wu_r.clear();
         SiteID.clear();
+        IsEmpty.clear();
         CheckValue.clear();
         FormatStTimeHour.clear();
         FormatStTimeMin.clear();

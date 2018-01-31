@@ -4,149 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- <RelativeLayout
-            android:id="@+id/rl_view_current_lesson_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/rl_view_current_lesson_topbar"
-            android:background="#DDE5FB" >
-
-            <TextView
-                android:id="@+id/tv_view_current_lesson_bar_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="5dp"
-                android:text=""
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault"
-                android:textColor="@color/texts1" />
-
-            <TextView
-                android:id="@+id/tv_view_current_lesson_studentname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:text="Student Name"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:textColor="@color/texts1" />
-
-            <TextView
-                android:id="@+id/tv_view_attendace"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="30dp"
-                android:layout_toLeftOf="@+id/tv_view_review"
-                android:text="A"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:textColor="@color/texts1" />
-
-            <TextView
-                android:id="@+id/tv_view_review"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="86dp"
-                android:layout_toLeftOf="@+id/tv_view_current_lesson_age"
-                android:text="R"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:textColor="@color/texts1" />
-
-            <TextView
-                android:id="@+id/tv_view_current_lesson_age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="75dp"
-                android:layout_toLeftOf="@+id/tv_view_current_lesson_level"
-                android:text="Age"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:textColor="@color/texts1" />
-
-            <TextView
-                android:id="@+id/tv_view_current_lesson_level"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="95dp"
-                android:layout_toLeftOf="@+id/tv_view_current_lesson_sched_level"
-                android:text="Level"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:textColor="@color/texts1" />
-
-            <TextView
-                android:id="@+id/tv_view_current_lesson_sched_level"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="100dp"
-                android:layout_toLeftOf="@+id/tv_view_current_lesson_paid_cls"
-                android:text="Sch. Level"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:textColor="@color/texts1" />
-
-
-              <TextView
-            android:id="@+id/tv_view_current_lesson_wbr"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="18dp"
-			android:layout_centerVertical="true"
-            android:textColor="@color/texts1"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-            android:layout_toLeftOf="@+id/tv_view_current_lesson_paid_cls"
-            android:text="W     B     R"
-            android:visibility="gone" />
-
-
-			<TextView
-            android:id="@+id/tv_view_current_lesson_paid_cls"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="15dp"
-            android:layout_toLeftOf="@+id/tv_view_current_lesson_present"
-            android:text="Paid Cls"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-            android:textColor="@color/texts1" />
-
-            <TextView
-                android:id="@+id/tv_view_current_lesson_present"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"
-                android:text="Attendance"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:textColor="@color/texts1" />
-
-            <TextView
-                android:id="@+id/tv_view_current_lesson_cls_lvl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="38dp"
-                android:layout_toLeftOf="@+id/tv_view_current_lesson_present"
-                android:text="Cls/Lvl"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:textColor="@color/texts1"
-                android:visibility="gone" />
-
-            <TextView
-                android:id="@+id/tv_view_current_lesson_paid_cls"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="15dp"
-                android:layout_toLeftOf="@+id/tv_view_current_lesson_cls_lvl"
-                android:text="Paid Cls"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:textColor="@color/texts1"
-                android:visibility="gone" />
-        </RelativeLayout> -->
     <RelativeLayout
         android:id="@+id/rl_cl_third_bar_row3"
         android:layout_width="match_parent"
@@ -164,14 +21,41 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="Time"
                 android:gravity="center"
-                android:textAlignment="center"
                 android:paddingBottom="3dp"
+                android:text="Time"
+                android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
         </RelativeLayout>
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_cl_third_bar_row4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/rl_time1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_cl_time1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:paddingBottom="3dp"
+                android:text="Time"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -614,7 +498,19 @@
                 android:textColor="@color/black" />
         </RelativeLayout>
 
-
+        <TextView
+            android:id="@+id/no_more_lesson_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:paddingBottom="3dp"
+            android:text="Time"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:visibility="gone" />
     </RelativeLayout>
 
 </LinearLayout>
