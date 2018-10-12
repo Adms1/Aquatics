@@ -23,7 +23,7 @@ to the best of our ability.</string>
     <string name="title_activity_manu">ManuActivity</string>
     <string name="data">Please remind all your students to join the swim meet which is coming up this saturday 4/19 </string>
     <string name="title_activity_current_lesson">CurrentLessonActivity</string>
-   <string name="toast_crash"></string>
+    <string name="toast_crash"></string>
     <string-array name="level">
         <item>P1</item>
         <item>P2</item>
@@ -92,7 +92,7 @@ to the best of our ability.</string>
         <item>REQUEST DECK ASSIST</item>
         <item>AWARD A TERRIFIC TURBO</item>
         <item>TURBO IDEA</item>
-        <item>PEER TO PEER</item>
+        <item>CLOCK IN / OUT</item> <!--PEER TO PEER-->
         <item>REPORTS</item>
     </string-array>
     <string-array name="menuoption1">
@@ -102,7 +102,7 @@ to the best of our ability.</string>
         <item>TURBO IDEA</item>
         <item>MESSAGE CENTER</item>
         <item>REQUEST DECK ASSIST</item>
-        <item>PEER TO PEER</item>
+        <item>CLOCK IN / OUT</item> <!--PEER TO PEER-->
         <item>QUESTION OF THE MONTH</item>
     </string-array>
     <string-array name="menuoption2">
@@ -114,7 +114,7 @@ to the best of our ability.</string>
         <item>EVALUATIONS</item>
         <item>MESSAGE CENTER</item>
         <item>REQUEST DECK ASSIST</item>
-        <item>PEER TO PEER</item>
+        <item>CLOCK IN / OUT</item> <!--PEER TO PEER-->
         <item>REPORTS</item>
         <item>SHADOW REQUEST</item>
         <item>COMMU. LOGS.</item>
@@ -160,13 +160,13 @@ to the best of our ability.</string>
         <item>Girl Scout</item>
         <item>Cub Scout</item>
         <item>Water Polo</item>
-        <item>Instructor Report</item>	
+        <item>Instructor Report</item>
         <item>Report Pool Issue</item>
         <item>Report Maintenance Issue</item>
         <item>Report IT Issue</item>
         <item>Report Customer Concern</item>
     </string-array>
-  
+
     <string-array name="hour">
         <item>hr</item>
         <item>1</item>
@@ -261,10 +261,10 @@ to the best of our ability.</string>
         <item>Senior Instructors Report</item>
         <item>Senior Deck Supervisor Report</item>
         <item>Deck Supervisor Report</item>
-        
-         <item >LA Fitness/City Sports Instructor Daily Report</item>
-        <item >LA Fitness/City Sports Manager Report</item>
-         <item >LA Fitness/City Sports Lead Instuctor</item>
+
+        <item>LA Fitness/City Sports Instructor Daily Report</item>
+        <item>LA Fitness/City Sports Manager Report</item>
+        <item>LA Fitness/City Sports Lead Instuctor</item>
     </string-array>
 
     <string name="title_activity_report">ReportActivity</string>

@@ -30,10 +30,13 @@ import org.acra.annotation.ReportsCrashes;
 //        mode = ReportingInteractionMode.TOAST,
 //        resToastText = R.string.toast_crash
 //)"shrenik.diwanji@gmail.com,jon@waterworksswim.com,navin@admsystems.net"
-@ReportsCrashes(mailTo = "shah10846@gmail.com", // my email here
+
+@ReportsCrashes(mailTo = "shrenik.diwanji@gmail.com,jon@waterworksswim.com,navin@admsystems.net", // my email here
         mode = ReportingInteractionMode.SILENT,
         resToastText = R.string.toast_crash)
-
+//@ReportsCrashes(mailTo = "shah10846@gmail.com", // my email here
+//        mode = ReportingInteractionMode.SILENT,
+//        resToastText = R.string.toast_crash)
 public class MyApp extends Application {
 
     @Override

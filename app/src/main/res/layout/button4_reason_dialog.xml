@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/alert_txt"
+        android:layout_width="410dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:text="You are clocking out later than the set guideline. Please tell us the reason you are clocking out late."
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textColor="@color/texts" >
+    </TextView>
+
+    <EditText
+        android:id="@+id/reason_edt"
+        android:layout_width="410dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_layout"
+        android:hint="Please Enter Reason"
+        android:maxLines="10"
+        android:paddingLeft="7dp"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+        android:textColor="@color/texts" >
+    </EditText>
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="410dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="5dp"
+        android:text="No reason"
+        android:tag="checked"
+        android:textColor="@color/texts" />
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="410dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:text="Submit"/>
+
+</LinearLayout>

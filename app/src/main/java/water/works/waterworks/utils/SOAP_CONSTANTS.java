@@ -16,7 +16,7 @@ public class SOAP_CONSTANTS {
 
     //Temp Local
     public static String NAMESPACE = "http://tempuri.org/";
-    //new local 103.204.192.187
+//    //new local 103.204.192.187
 //		public static String SOAP_ADDRESS = "http://103.204.192.187:8081/WWWebServices/Service.asmx?WSDL"; //local
 //		public static String SOAP_ADDRESS_1 = "http://103.204.192.187:8081/WWWebServices/Service.asmx/"; //local
 //		public static String Report_Url="http://103.204.192.187:8081/newcode/";
@@ -165,4 +165,32 @@ public class SOAP_CONSTANTS {
     public static String current_channel = "channel";
     public static int lastCount = 0;
 
+    //code by megha
+
+    public static String Check_ClockIn = "CheckClockIn";
+    public static String Check_ClockIn_FromBreak = "CheckClockInFromBreak";
+    public static String Check_ClockOut_ForBreak = "CheckClockOutForBreak";
+    public static String Check_ClockOut= "CheckClockOut";
+    public static String AddTickReasonSession = "AddTickReasonSession";
+    public static String AddTickReasonSessionOut="AddTickReasonSessionOut";
+    public static String CheckTimeClicks_Method = "CheckTimeClicksNew";
+    public static String ProcessTimeClicks_Method = "ProcessTimeClicks";
+
+    //code by megha
+    public static String Check_ClockIn_Action = NAMESPACE
+            + "CheckClockIn";
+    public static String Check_ClockIn_FromBreak_Action = NAMESPACE
+            + "CheckClockInFromBreak";
+    public static String Check_ClockOut_ForBreak_Action = NAMESPACE
+            + "CheckClockOutForBreak";
+    public static String CheckClockOut_Action = NAMESPACE
+            + "CheckClockOut";
+    public static String AddTickReasonSession_Action = NAMESPACE
+            + "AddTickReasonSession";
+    public static String AddTickReasonSessionOut_Action=NAMESPACE
+            +"AddTickReasonSessionOut";
+    public static String CheckTimeClicks_Action = NAMESPACE
+            + "CheckTimeClicksNew";
+    public static String ProcessTimeClicks_Action = NAMESPACE
+            + "ProcessTimeClicks";
 }	

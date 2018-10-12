@@ -88,7 +88,7 @@ public class InstructorViewCurrentScheduleAdapter extends BaseAdapter implements
             wu_sttimehr, wu_sttimemin, wu_scheduledate, ddlW, ddlB, ddlR,
             wu_siteid, wu_slevel, ddlSchedLevel, wu_schedlevel, chkschedselect,
             straarylist, Msg_Status, Msg_Str, prereqid, lev, oldlev, newddlw,
-            newddlb, newddlr;
+            newddlb, newddlr,oldatt,newatt;
     String siteid;
     ArrayList<String> FinalPreReqId = new ArrayList<String>();
     ArrayList<Character> levelchanged;
@@ -276,10 +276,7 @@ public class InstructorViewCurrentScheduleAdapter extends BaseAdapter implements
                 try {
                     if (position == 0) {
                         holder.tv_instructorname_row
-                                .setText(ViewCurrentScheduleInstructorActivity.Instroctorname
-                                        .get(ViewCurrentScheduleInstructorActivity.Instroctorid
-                                                .indexOf(data.get(position)
-                                                        .getInstructorID())) + " (" + data.get(position).getLessonName() + ")");
+                                .setText(ViewCurrentScheduleInstructorActivity.Instroctorname.get(ViewCurrentScheduleInstructorActivity.Instroctorid.indexOf(data.get(position).getInstructorID())) + " (" + data.get(position).getLessonName() + ")");
                         holder.tv_instructorname_row.setVisibility(View.VISIBLE);
                     } else {
                         if (data.get(position)
@@ -498,7 +495,7 @@ public class InstructorViewCurrentScheduleAdapter extends BaseAdapter implements
                             + " " + data.get(position).getParentLastName() + ")";
                     if (gender.toString().equalsIgnoreCase("Female")) {
                         holder.tv_sName.setTextColor(Color.rgb(136, 0, 183));
-                        holder.tv_sName.setText(sname + "(" + data.get(position).getFormatStTimeHour() + ":" + data.get(position).getFormatStTimeMin() + ")");
+                        holder.tv_sName.setText(sname );//+ "(" + data.get(position).getFormatStTimeHour() + ":" + data.get(position).getFormatStTimeMin() + ")");
 
                     } else {
                         holder.tv_sName.setTextColor(Color.rgb(0, 0, 102));
@@ -1809,6 +1806,7 @@ public class InstructorViewCurrentScheduleAdapter extends BaseAdapter implements
                                             newddlw = new ArrayList<String>();
                                             newddlb = new ArrayList<String>();
                                             newddlr = new ArrayList<String>();
+
                                             siteid = data.get(0).getSiteID();
                                             int newpos;
                                             for (int i = 0; i < checked_att.size(); i++) {

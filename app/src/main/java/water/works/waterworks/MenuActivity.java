@@ -105,10 +105,12 @@ public class MenuActivity extends Activity implements OnClickListener {
 	String emp_type_for_cee,emp_type_for_cee_manager,emp_type_for_aquatics,emp_userid_for_cee,emp_userid_for_cee_manager,emp_userid_for_aquatics;
 	boolean pool_status = false;
 	int[] imageId_INSTRUCTOR = { R.drawable.menu_currentlesson,R.drawable.menu_schedule,R.drawable.menu_mail,R.drawable.menu_ring,R.drawable.menu_cup,
-			R.drawable.menu_bulb,R.drawable.menu_peer,R.drawable.menu_reports};
+			R.drawable.menu_bulb,R.drawable.clock,R.drawable.menu_reports};
 	int[] imageId_DECK = { R.drawable.menu_schedule,R.drawable.dailyreport,R.drawable.menu_cup,R.drawable.menu_bulb,R.drawable.menu_mail,
-			R.drawable.menu_ring,R.drawable.menu_peer,R.drawable.question_of_the_month};
-	int[] imageId_MANAGER = { R.drawable.menu_currentlesson,R.drawable.menu_schedule,R.drawable.menu_cup,R.drawable.menu_bulb,R.drawable.share,R.drawable.evaluation,R.drawable.menu_mail,R.drawable.menu_ring,R.drawable.menu_peer,R.drawable.menu_reports,R.drawable.shadow,R.drawable.communication};
+			R.drawable.menu_ring,R.drawable.clock,R.drawable.question_of_the_month};
+	int[] imageId_MANAGER = { R.drawable.menu_currentlesson,R.drawable.menu_schedule,R.drawable.menu_cup,R.drawable.menu_bulb,R.drawable.share,
+			R.drawable.evaluation,R.drawable.menu_mail,R.drawable.menu_ring,R.drawable.clock,R.drawable.menu_reports,R.drawable.shadow,
+			R.drawable.communication};
 	GridView grid_home_option;
 	String[] MenuName;
 	HomeGridMenuOptionAdapter adapter;
@@ -287,11 +289,13 @@ public class MenuActivity extends Activity implements OnClickListener {
 						//             		startActivity(repIntent);
 					}
 					else if(position==8){
-						Intent i =  new Intent(getApplicationContext(),DetailReportActivity.class);
-						i.putExtra("FROM", "");
-						i.putExtra("url", "http://reports.waterworksswim.com/reports/office/peer.php?type=O&uid="+WW_StaticClass.UserName);
-						//					i.putExtra("url", "http://192.168.1.201/survey_office/peer.php?type=A&uid="+WW_StaticClass.UserName);
-//						http://forms.waterworksswim.com/survey_office/peer.php?type=A&uid=
+//						Intent i =  new Intent(getApplicationContext(),DetailReportActivity.class);
+//						i.putExtra("FROM", "");
+//						i.putExtra("url", "http://reports.waterworksswim.com/reports/office/peer.php?type=O&uid="+WW_StaticClass.UserName);
+//						//					i.putExtra("url", "http://192.168.1.201/survey_office/peer.php?type=A&uid="+WW_StaticClass.UserName);
+////						http://forms.waterworksswim.com/survey_office/peer.php?type=A&uid=
+//						startActivity(i);
+						Intent i=new Intent(MenuActivity.this,ClockinoutActivity.class);
 						startActivity(i);
 
 					}
@@ -349,10 +353,12 @@ public class MenuActivity extends Activity implements OnClickListener {
 						finish();
 					}
 					else if(position==6){
-						Intent i =  new Intent(getApplicationContext(),DetailReportActivity.class);
-						i.putExtra("FROM", "");
-						i.putExtra("url", "http://reports.waterworksswim.com/reports/office/peer.php?type=O&uid="+WW_StaticClass.UserName);
-						//						i.putExtra("url", "http://192.168.1.201/survey_office/peer.php?type=A&uid="+WW_StaticClass.UserName);
+//						Intent i =  new Intent(getApplicationContext(),DetailReportActivity.class);
+//						i.putExtra("FROM", "");
+//						i.putExtra("url", "http://reports.waterworksswim.com/reports/office/peer.php?type=O&uid="+WW_StaticClass.UserName);
+//						//						i.putExtra("url", "http://192.168.1.201/survey_office/peer.php?type=A&uid="+WW_StaticClass.UserName);
+//						startActivity(i);
+						Intent i=new Intent(MenuActivity.this,ClockinoutActivity.class);
 						startActivity(i);
 					}
 
@@ -405,10 +411,12 @@ public class MenuActivity extends Activity implements OnClickListener {
 						startActivity(i);
 					}
 					else if(position==6){
-						Intent i =  new Intent(getApplicationContext(),DetailReportActivity.class);
-						i.putExtra("FROM", "");
-						i.putExtra("url", "http://reports.waterworksswim.com/reports/office/peer.php?type=O&uid="+WW_StaticClass.UserName);
-						//						i.putExtra("url", "http://192.168.1.201/survey_office/peer.php?type=A&uid="+WW_StaticClass.UserName);
+//						Intent i =  new Intent(getApplicationContext(),DetailReportActivity.class);
+//						i.putExtra("FROM", "");
+//						i.putExtra("url", "http://reports.waterworksswim.com/reports/office/peer.php?type=O&uid="+WW_StaticClass.UserName);
+//						//						i.putExtra("url", "http://192.168.1.201/survey_office/peer.php?type=A&uid="+WW_StaticClass.UserName);
+//						startActivity(i);
+						Intent i=new Intent(MenuActivity.this,ClockinoutActivity.class);
 						startActivity(i);
 					}
 

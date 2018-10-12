@@ -20,8 +20,8 @@ android {
         applicationId "water.works.waterworks"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 42
-        versionName "3.6.8.4"
+        versionCode 43
+        versionName "3.6.8.5"
         multiDexEnabled true
         useLibrary 'org.apache.http.legacy'
 
@@ -42,11 +42,10 @@ android {
     }
 
 
-
-
 }
 
 dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
 
