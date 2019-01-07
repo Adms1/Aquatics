@@ -201,7 +201,7 @@ public class ModifyCommentsAdapter extends BaseAdapter{
 							temp_view.getContext()).create();
 					// hide title bar
 					// alertDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-					alertDialog.setTitle("LAFitnessApp");
+					alertDialog.setTitle(context.getString(R.string.app_name));
 					alertDialog.setIcon(temp_view.getContext().getResources().getDrawable(
 							R.drawable.ic_launcher));
 					alertDialog.setCanceledOnTouchOutside(false);
@@ -232,7 +232,7 @@ public class ModifyCommentsAdapter extends BaseAdapter{
 					// show the alert dialog
 					alertDialog.show();
 				} else {
-					Toast.makeText(context, "Comment not deleted", Toast.LENGTH_LONG).show();
+					Toast.makeText(context, "Comment not deleted",Toast.LENGTH_LONG).show();
 				}
 
 		}

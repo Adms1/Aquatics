@@ -421,7 +421,7 @@ public class MessageCenterActivity extends Activity {
                             MessageCenterActivity.this);
 
                     // set title
-                    alertDialogBuilder.setTitle("LAFitnessApp");
+                    alertDialogBuilder.setTitle(getString(R.string.app_name));
                     alertDialogBuilder.setIcon(getResources().getDrawable(
                             R.mipmap.logo));
 
@@ -573,7 +573,7 @@ public class MessageCenterActivity extends Activity {
             Temp_FolderID.clear();
             Temp_FolderName.clear();
             pDialog = new ProgressDialog(MessageCenterActivity.this);
-            pDialog.setTitle("LAFitnessApp");
+            pDialog.setTitle(getString(R.string.app_name));
             pDialog.setMessage(Html.fromHtml("Loading wait..."));
             pDialog.setIndeterminate(true);
             pDialog.setCancelable(false);
@@ -776,7 +776,7 @@ public class MessageCenterActivity extends Activity {
                 SingleOptionAlertWithoutTitle
                         .ShowAlertDialog(
                                 MessageCenterActivity.this,
-                                "LAFitnessApp",
+                                getString(R.string.app_name),
                                 "Server not responding.\nPlease check internet connection or try after sometime.",
                                 "OK");
                 server_response = false;
@@ -1072,7 +1072,7 @@ public class MessageCenterActivity extends Activity {
                 SingleOptionAlertWithoutTitle
                         .ShowAlertDialog(
                                 MessageCenterActivity.this,
-                                "LAFitnessApp",
+                                getString(R.string.app_name),
                                 "Server not responding.\nPlease check internet connection or try after sometime.",
                                 "OK");
                 server_response = false;

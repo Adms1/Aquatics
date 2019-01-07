@@ -428,11 +428,11 @@ public class NewModifyComments extends Activity implements OnClickListener {
 			System.out.println(b);
 			if(newcomment.isEmpty()||newcomment.equalsIgnoreCase("")){
 				SingleOptionAlertWithoutTitle.ShowAlertDialog(
-						NewModifyComments.this, "LAFitnessApp","Add comment befor submitting.", "Ok");
+						NewModifyComments.this, getString(R.string.app_name),"Add comment befor submitting.", "Ok");
 			}
 			else if(b==true){
 				SingleOptionAlertWithoutTitle.ShowAlertDialog
-				(NewModifyComments.this, "LAFitnessApp", "Please select currect option", "Ok");
+				(NewModifyComments.this, getString(R.string.app_name), "Please select currect option", "Ok");
 			}
 			else if(newdate_keepforever.equalsIgnoreCase("Keep for ever")){
 				newdate_keepforever="Keep for ever";
@@ -452,7 +452,7 @@ public class NewModifyComments extends Activity implements OnClickListener {
 					NewModifyComments.this);
 
 			// set title
-			alertDialogBuilder.setTitle("LAFitnessApp");
+			alertDialogBuilder.setTitle(getString(R.string.app_name));
 			alertDialogBuilder.setIcon(getResources().getDrawable(R.drawable.ic_launcher));
 
 			// set dialog message
@@ -587,14 +587,14 @@ public class NewModifyComments extends Activity implements OnClickListener {
 		super.onPostExecute(result);
 		if(server_status){
 			SingleOptionAlertWithoutTitle.ShowAlertDialog(
-					NewModifyComments.this,"LAFitnessApp", "Server not responding.\nPlease check internet connection or try after sometime.", "OK");
+					NewModifyComments.this,getString(R.string.app_name), "Server not responding.\nPlease check internet connection or try after sometime.", "OK");
 			server_status =false;
 		}
 		else{
 			if (comment_status) {
 				comment_status = false;
 				AlertDialog alertDialog = new AlertDialog.Builder(NewModifyComments.this).create();
-				alertDialog.setTitle("LAFitnessApp");
+				alertDialog.setTitle(getString(R.string.app_name));
 				alertDialog.setIcon(getApplicationContext().getResources().getDrawable(R.drawable.ic_launcher));
 				alertDialog.setCanceledOnTouchOutside(false); 
 				// set the message
@@ -650,7 +650,7 @@ public class NewModifyComments extends Activity implements OnClickListener {
 				alertDialog.show();
 			}else {
 					SingleOptionAlertWithoutTitle.ShowAlertDialog(
-							NewModifyComments.this,"LAFitnessApp", "Comment not inserted", "Ok");
+							NewModifyComments.this,getString(R.string.app_name), "Comment not inserted", "Ok");
 				}
 			}
 		}

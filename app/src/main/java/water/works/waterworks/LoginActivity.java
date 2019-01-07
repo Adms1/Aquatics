@@ -198,9 +198,7 @@ public class LoginActivity extends Activity implements OnClickListener {
         decorView.setOnSystemUiVisibilityChangeListener(
                 new View.OnSystemUiVisibilityChangeListener() {
 
-
                     public void onSystemUiVisibilityChange(int pVisibility) {
-
                         if ((pVisibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
                             decorView.setSystemUiVisibility(uiOptions);
                         }

@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="water.works.waterworks"
-    android:versionCode="43"
-    android:versionName="3.6.8.5">
+    android:versionCode="45"
+    android:versionName="3.6.8.7">
 
     <uses-sdk
         android:minSdkVersion="15"

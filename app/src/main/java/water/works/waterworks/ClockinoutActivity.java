@@ -41,6 +41,7 @@ import water.works.waterworks.utils.SOAP_CONSTANTS;
 import water.works.waterworks.utils.SingleOptionAlertWithoutTitle;
 import water.works.waterworks.utils.Utility;
 import water.works.waterworks.utils.WW_StaticClass;
+import android.view.View.OnClickListener;
 
 public class ClockinoutActivity extends Activity implements View.OnClickListener {
     public static boolean fromclock = false;
@@ -59,6 +60,7 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
     ArrayList<String> ticktype, juid, jobtitle, Msg;
     LinearLayout ll_clockinday, ll_clockinbrk, ll_clockoutday, ll_clockoutbrk;
     String reasonStr = "", checkboxValueStr = "";
+    private String clockInTypeStr = "0",clockInForBreakStr = "0";
     //code by megha
     int CheckTimeLength;
 
@@ -153,13 +155,11 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
     }
 
     public AlertDialog onDetectNetworkState() {
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(
-                ClockinoutActivity.this);
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(ClockinoutActivity.this);
         builder1.setIcon(getResources().getDrawable(R.drawable.ic_launcher));
         builder1.setMessage("Please turn on internet connection and try again.")
                 .setTitle("No Internet Connection.")
-                .setNegativeButton("Cancel",
-                        new DialogInterface.OnClickListener() {
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
 
                             @Override
                             public void onClick(DialogInterface dialog,
@@ -240,8 +240,7 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                 // TODO Auto-generated method
                 // stub
                 if (isInternetPresent) {
-                    if (et_username.getText().length() > 2
-                            && et_password.getText().length() > 2) {
+                    if (et_username.getText().length() > 2 && et_password.getText().length() > 2) {
                         username = et_username.getText().toString();
                         password = et_password.getText().toString();
                         dialog.dismiss();
@@ -304,6 +303,38 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 new ProcessTimeClicks().execute();
+                               //   AlertReasonDialog();
+
+                            }
+                        })
+                .setNegativeButton("No, I will clock in later",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // show it
+        alertDialog.show();
+
+    }
+    public void AlertDialogMsgForClockInBreakEarly() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                ClockinoutActivity.this);
+
+        alertDialogBuilder.setIcon(getResources().getDrawable(R.drawable.ic_launcher));
+
+        // set dialog message
+        alertDialogBuilder
+                .setMessage("You are clocking in more than 2 minutes before the end of your lunch break. Are you sure you want to continue?")
+                .setCancelable(false)
+                .setPositiveButton("Yes, clock me in now",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                //  new ProcessTimeClicks().execute();
                                 AlertReasonDialog();
 
                             }
@@ -322,7 +353,6 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
         alertDialog.show();
 
     }
-
     private void AlertButton4ReasonDialog() {
         // TODO Auto-generated method stub
         final Dialog dialog = new Dialog(ClockinoutActivity.this);
@@ -348,12 +378,8 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method
-                // stub
-
                 reasonStr = reason_edt.getText().toString();
                 if (checkboxValueStr.equalsIgnoreCase("")) {
-                    AlertDialogButtonlast4Msg();
-                } else {
                     if (!reasonStr.equalsIgnoreCase("")) {
                         new AddTickReasonSessionOut().execute();
 //                    new CheckTimeClicks().execute();
@@ -363,6 +389,16 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                     } else {
                         AlertDialogButtonlast4Msg();
                     }
+                } else {
+//                    if (!reasonStr.equalsIgnoreCase("")) {
+//                            new AddTickReasonSessionOut().execute();
+////                    new CheckTimeClicks().execute();
+//                            new ProcessTimeClicks().execute();
+//
+//
+//                    } else {
+                    AlertDialogButtonlast4Msg();
+//                    }
                 }
                 dialog.cancel();
             }
@@ -372,7 +408,6 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
     }
 
     private void AlertReasonDialog() {
-        // TODO Auto-generated method stub
         final Dialog dialog = new Dialog(ClockinoutActivity.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.clock_alertdialog);
@@ -381,11 +416,11 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                 .findViewById(R.id.reason_edt);
         Button submit = (Button) dialog.findViewById(R.id.submit);
         if (btnclick.equalsIgnoreCase("1")) {
-            alert_txt.setText("Please enter the reason you are clocking in early.");
+            alert_txt.setText("You have Clocked In successfully.\nPlease enter the reason you are clocking in early.");
         } else if (btnclick.equalsIgnoreCase("2")) {
             alert_txt.setText("You are attempting to clock out more than 5 minutes from the start of your meal break. Please enter the reason you are clocking out at this time:");
         } else if (btnclick.equalsIgnoreCase("3")) {
-            alert_txt.setText("Please enter the reason you are clocking in early.");
+            alert_txt.setText("You have Clocked In From Break successfully.\nPlease enter the reason you are clocking in early.");
         }
         submit.setOnClickListener(new View.OnClickListener() {
 
@@ -563,7 +598,6 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
         protected void onPreExecute() {
             // TODO Auto-generated method stub
             super.onPreExecute();
-
             pDialog = new ProgressDialog(ClockinoutActivity.this);
             pDialog.setTitle("Authenticating...");
             pDialog.setMessage(Html.fromHtml("Loading wait..."));
@@ -576,21 +610,19 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
         @Override
         protected Void doInBackground(Void... params) {
             // TODO Auto-generated method stub
-            SoapObject request = new SoapObject(SOAP_CONSTANTS.NAMESPACE,
-                    SOAP_CONSTANTS.METHOD_NAME_LOGIN);
+            SoapObject request = new SoapObject(SOAP_CONSTANTS.NAMESPACE,SOAP_CONSTANTS.METHOD_NAME_LOGIN);
             // Adding Username and Password for Login Invok
             request.addProperty("username", username);
             request.addProperty("password", password);
             request.addProperty("deviceid", "");
-            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
-                    SoapEnvelope.VER11); // Make an Envelop for sending as whole
+            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11); // Make an Envelop for sending as whole
             envelope.dotNet = true;
             envelope.setOutputSoapObject(request);
             Log.i("Request", "Request = " + request);
-            HttpTransportSE androidHttpTransport = new HttpTransportSE(
-                    SOAP_CONSTANTS.SOAP_ADDRESS);
+            HttpTransportSE androidHttpTransport = new HttpTransportSE(SOAP_CONSTANTS.SOAP_ADDRESS);
             try {
-                androidHttpTransport.call(SOAP_CONSTANTS.SOAP_ACTION_LOGIN, envelope); // Calling
+                // Calling
+                androidHttpTransport.call(SOAP_CONSTANTS.SOAP_ACTION_LOGIN,envelope);
                 // Web
                 // service
                 SoapObject response = (SoapObject) envelope.getResponse();
@@ -649,12 +681,11 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
             } else {
                 if (login_status) {
                     login_status = false;
-
                     new CheckTimeClicks().execute();
 
                 } else {
                     SingleOptionAlertWithoutTitle.ShowAlertDialog(
-                            ClockinoutActivity.this, "LAFitnessApp",
+                            ClockinoutActivity.this, getString(R.string.app_name),
                             "Please Enter Valid Username and Password", "OK");
                 }
             }
@@ -753,8 +784,10 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                         Timemsg = spiltkey[1];
 //                        spiltkey[0]="1";
                         if (spiltkey[0].equalsIgnoreCase("0")) {
+                            clockInTypeStr = spiltkey[0];
                             new ProcessTimeClicks().execute();
                         } else {
+                            clockInTypeStr = spiltkey[0];
                             AlertDialogMsg();
                         }
                     } catch (Exception e) {
@@ -763,8 +796,7 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
 
                 } else {
                     SingleOptionAlertWithoutTitle.ShowAlertDialog(
-                            ClockinoutActivity.this, "LAFitnessApp",
-                            "Please login again to clock in / out.", "OK");
+                            ClockinoutActivity.this, getString(R.string.app_name), "Please login again to clock in / out.", "OK");
                 }
             }
         }
@@ -797,8 +829,7 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
             request.addProperty("UserId", userid);
             request.addProperty("Status", userlevel);
 
-            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
-                    SoapEnvelope.VER11); // Make an Envelop for sending as whole
+            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11); // Make an Envelop for sending as whole
             envelope.dotNet = true;
             envelope.setOutputSoapObject(request);
             Log.i("Request", "Request = " + request);
@@ -871,7 +902,7 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
 
                 } else {
                     SingleOptionAlertWithoutTitle.ShowAlertDialog(
-                            ClockinoutActivity.this, "LAFitnessApp",
+                            ClockinoutActivity.this, getString(R.string.app_name),
                             "Please login again to clock in / out.", "OK");
                 }
             }
@@ -969,9 +1000,11 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                         spiltkey = clockInStr.split("\\|");
                         Timemsg = spiltkey[1];
                         if (spiltkey[0].equalsIgnoreCase("0")) {
+                           clockInForBreakStr = spiltkey[0];
                             new ProcessTimeClicks().execute();
                         } else {
-                            AlertDialogMsg();
+                            clockInForBreakStr = spiltkey[0];
+                            AlertDialogMsgForClockInBreakEarly();
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -979,7 +1012,7 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
 
                 } else {
                     SingleOptionAlertWithoutTitle.ShowAlertDialog(
-                            ClockinoutActivity.this, "LAFitnessApp",
+                            ClockinoutActivity.this, getString(R.string.app_name),
                             "Please login again to clock in / out.", "OK");
                 }
             }
@@ -1089,7 +1122,7 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
 
                 } else {
                     SingleOptionAlertWithoutTitle.ShowAlertDialog(
-                            ClockinoutActivity.this, "LAFitnessApp",
+                            ClockinoutActivity.this, getString(R.string.app_name),
                             "Please login again to clock in / out.", "OK");
                 }
             }
@@ -1121,19 +1154,17 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                     SOAP_CONSTANTS.AddTickReasonSession);
             // Adding Username and Password for Login Invok
             request.addProperty("token", token);
-            request.addProperty("strReason", reasonStr);
+            request.addProperty("strReason",reasonStr);
             request.addProperty("hdnTick", btnclick);
             request.addProperty("TimeMsg", Timemsg);
             request.addProperty("strUserName", UserName);
             request.addProperty("UserId", userid);
 
-            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
-                    SoapEnvelope.VER11); // Make an Envelop for sending as whole
+            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11); // Make an Envelop for sending as whole
             envelope.dotNet = true;
             envelope.setOutputSoapObject(request);
             Log.i("Request", "Request = " + request);
-            HttpTransportSE androidHttpTransport = new HttpTransportSE(
-                    SOAP_CONSTANTS.SOAP_ADDRESS);
+            HttpTransportSE androidHttpTransport = new HttpTransportSE(SOAP_CONSTANTS.SOAP_ADDRESS);
             try {
                 androidHttpTransport.call(SOAP_CONSTANTS.AddTickReasonSession_Action,
                         envelope); // Calling
@@ -1186,17 +1217,20 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
 
             } else {
                 if (CheckTimeClicks_status) {
-//                    CheckTimeClicks_status = true;
+                   CheckTimeClicks_status = true;
                     try {
 //                        new CheckTimeClicks().execute();
+                        if(whatclick == 3){
+                            new ProcessTimeClicks().execute();
+                            clockInForBreakStr = "0";
+                        }
+
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
 
                 } else {
-                    SingleOptionAlertWithoutTitle.ShowAlertDialog(
-                            ClockinoutActivity.this, "LAFitnessApp",
-                            "Please login again to clock in / out.", "OK");
+                    SingleOptionAlertWithoutTitle.ShowAlertDialog(ClockinoutActivity.this, getString(R.string.app_name), "Please login again to clock in / out.", "OK");
                 }
             }
         }
@@ -1232,13 +1266,12 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
             request.addProperty("strUserName", UserName);
             request.addProperty("UserId", userid);
 
-            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
-                    SoapEnvelope.VER11); // Make an Envelop for sending as whole
+            // Make an Envelop for sending as whole
+            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
             envelope.dotNet = true;
             envelope.setOutputSoapObject(request);
             Log.i("Request", "Request = " + request);
-            HttpTransportSE androidHttpTransport = new HttpTransportSE(
-                    SOAP_CONSTANTS.SOAP_ADDRESS);
+            HttpTransportSE androidHttpTransport = new HttpTransportSE(SOAP_CONSTANTS.SOAP_ADDRESS);
             try {
                 androidHttpTransport.call(SOAP_CONSTANTS.AddTickReasonSessionOut_Action,
                         envelope); // Calling
@@ -1300,9 +1333,7 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                     }
 
                 } else {
-                    SingleOptionAlertWithoutTitle.ShowAlertDialog(
-                            ClockinoutActivity.this, "LAFitnessApp",
-                            "Please login again to clock in / out.", "OK");
+                    SingleOptionAlertWithoutTitle.ShowAlertDialog(ClockinoutActivity.this, getString(R.string.app_name), "Please login again to clock in / out.", "OK");
                 }
             }
         }
@@ -1416,30 +1447,34 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                     CheckTimeClicks_status = false;
                     try {
                         LinearLayout v = null;
-                        if (whatclick == 1) {
-                            v = ll_clockinday;
-                            ll_clockinbrk.removeAllViews();
-                            ll_clockinday.removeAllViews();
-                            ll_clockoutbrk.removeAllViews();
-                            ll_clockoutday.removeAllViews();
-                        } else if (whatclick == 2) {
-                            v = ll_clockoutbrk;
-                            ll_clockinbrk.removeAllViews();
-                            ll_clockinday.removeAllViews();
-                            ll_clockoutbrk.removeAllViews();
-                            ll_clockoutday.removeAllViews();
-                        } else if (whatclick == 3) {
-                            v = ll_clockinbrk;
-                            ll_clockinbrk.removeAllViews();
-                            ll_clockinday.removeAllViews();
-                            ll_clockoutbrk.removeAllViews();
-                            ll_clockoutday.removeAllViews();
-                        } else if (whatclick == 4) {
-                            v = ll_clockoutday;
-                            ll_clockinbrk.removeAllViews();
-                            ll_clockinday.removeAllViews();
-                            ll_clockoutbrk.removeAllViews();
-                            ll_clockoutday.removeAllViews();
+                        try {
+                            if (whatclick == 1) {
+                                v = ll_clockinday;
+                                ll_clockinbrk.removeAllViews();
+                                ll_clockinday.removeAllViews();
+                                ll_clockoutbrk.removeAllViews();
+                                ll_clockoutday.removeAllViews();
+                            } else if (whatclick == 2) {
+                                v = ll_clockoutbrk;
+                                ll_clockinbrk.removeAllViews();
+                                ll_clockinday.removeAllViews();
+                                ll_clockoutbrk.removeAllViews();
+                                ll_clockoutday.removeAllViews();
+                            } else if (whatclick == 3) {
+                                v = ll_clockinbrk;
+                                ll_clockinbrk.removeAllViews();
+                                ll_clockinday.removeAllViews();
+                                ll_clockoutbrk.removeAllViews();
+                                ll_clockoutday.removeAllViews();
+                            } else if (whatclick == 4) {
+                                v = ll_clockoutday;
+                                ll_clockinbrk.removeAllViews();
+                                ll_clockinday.removeAllViews();
+                                ll_clockoutbrk.removeAllViews();
+                                ll_clockoutday.removeAllViews();
+                            }
+                        }catch (Exception ex){
+
                         }
                         if (Msg.get(0).toString().equalsIgnoreCase("")) {
                             if (CheckTimeLength > 1) {
@@ -1458,8 +1493,7 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                                     } else {
                                         if (Msg.get(0).toString().equalsIgnoreCase("")) {
                                             for (int i = 0; i < jobtitle.size(); i++) {
-                                                View childView = getLayoutInflater()
-                                                        .inflate(
+                                                View childView = getLayoutInflater().inflate(
                                                                 R.layout.home_grid_item,
                                                                 v, false);
                                                 final TextView tv_name = (TextView) childView
@@ -1483,19 +1517,51 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                                                     public void onClick(View v) {
                                                         // TODO Auto-generated method
                                                         // stub
-                                                        julinkid = tv_name.getTag()
-                                                                .toString();
+                                                        julinkid = tv_name.getTag().toString();
 //                                                new ProcessTimeClicks().execute();
                                                         new CheckClockOut().execute();
+
+                                                        try {
+
+                                                            LinearLayout v1 = null;
+                                                            if (whatclick == 1) {
+                                                                v1 = ll_clockinday;
+                                                                ll_clockinbrk.removeAllViews();
+                                                                ll_clockinday.removeAllViews();
+                                                                ll_clockoutbrk.removeAllViews();
+                                                                ll_clockoutday.removeAllViews();
+                                                            } else if (whatclick == 2) {
+                                                                v1 = ll_clockoutbrk;
+                                                                ll_clockinbrk.removeAllViews();
+                                                                ll_clockinday.removeAllViews();
+                                                                ll_clockoutbrk.removeAllViews();
+                                                                ll_clockoutday.removeAllViews();
+                                                            } else if (whatclick == 3) {
+                                                                v1 = ll_clockinbrk;
+                                                                ll_clockinbrk.removeAllViews();
+                                                                ll_clockinday.removeAllViews();
+                                                                ll_clockoutbrk.removeAllViews();
+                                                                ll_clockoutday.removeAllViews();
+                                                            } else if (whatclick == 4) {
+                                                                v1 = ll_clockoutday;
+                                                                ll_clockinbrk.removeAllViews();
+                                                                ll_clockinday.removeAllViews();
+                                                                ll_clockoutbrk.removeAllViews();
+                                                                ll_clockoutday.removeAllViews();
+                                                            }
+                                                        }catch (Exception ex){
+                                                            ex.printStackTrace();
+                                                        }
+
+
                                                     }
                                                 });
                                                 v.addView(childView);
                                             }
                                         } else {
                                             SingleOptionAlertWithoutTitle
-                                                    .ShowAlertDialog(
-                                                            ClockinoutActivity.this,
-                                                            "LAFitnessApp", Msg.get(0)
+                                                    .ShowAlertDialog(ClockinoutActivity.this,
+                                                            getString(R.string.app_name), Msg.get(0)
                                                                     .toString(), "Ok");
                                         }
                                     }
@@ -1528,15 +1594,45 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                                                     julinkid = tv_name.getTag()
                                                             .toString();
 //                                            new ProcessTimeClicks().execute();
+                                                    LinearLayout v1 = null;
 
-                                                    if (whatclick == 1) {
-                                                        new CheckClockIn().execute();
-                                                    } else if (whatclick == 2) {
-                                                        new CheckClockOutForBreak().execute();
-                                                    } else if (whatclick == 3) {
-                                                        new CheckClockInFromBreak().execute();
-                                                    } else if (whatclick == 4) {
-                                                        new CheckClockOut().execute();
+                                                    try {
+
+                                                        if (whatclick == 1) {
+                                                            new CheckClockIn().execute();
+
+                                                            v1 = ll_clockinday;
+                                                            ll_clockinbrk.removeAllViews();
+                                                            ll_clockinday.removeAllViews();
+                                                            ll_clockoutbrk.removeAllViews();
+                                                            ll_clockoutday.removeAllViews();
+
+                                                        } else if (whatclick == 2) {
+                                                            new CheckClockOutForBreak().execute();
+                                                            v1 = ll_clockoutbrk;
+                                                            ll_clockinbrk.removeAllViews();
+                                                            ll_clockinday.removeAllViews();
+                                                            ll_clockoutbrk.removeAllViews();
+                                                            ll_clockoutday.removeAllViews();
+
+                                                        } else if (whatclick == 3) {
+                                                            new CheckClockInFromBreak().execute();
+                                                            v1 = ll_clockinbrk;
+                                                            ll_clockinbrk.removeAllViews();
+                                                            ll_clockinday.removeAllViews();
+                                                            ll_clockoutbrk.removeAllViews();
+                                                            ll_clockoutday.removeAllViews();
+
+                                                        } else if (whatclick == 4) {
+                                                            new CheckClockOut().execute();
+                                                            v1 = ll_clockoutday;
+                                                            ll_clockinbrk.removeAllViews();
+                                                            ll_clockinday.removeAllViews();
+                                                            ll_clockoutbrk.removeAllViews();
+                                                            ll_clockoutday.removeAllViews();
+                                                        }
+                                                    }catch (Exception ex){
+                                                        ex.printStackTrace();
                                                     }
 
                                                 }
@@ -1546,7 +1642,7 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                                     } else {
                                         SingleOptionAlertWithoutTitle.ShowAlertDialog(
                                                 ClockinoutActivity.this,
-                                                "LAFitnessApp", Msg.get(0).toString(),
+                                                getString(R.string.app_name), Msg.get(0).toString(),
                                                 "Ok");
                                     }
 
@@ -1570,14 +1666,14 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                                 } else {
                                     SingleOptionAlertWithoutTitle.ShowAlertDialog(
                                             ClockinoutActivity.this,
-                                            "LAFitnessApp", Msg.get(0).toString(),
+                                            getString(R.string.app_name), Msg.get(0).toString(),
                                             "Ok");
                                 }
                             }
                         } else {
                             SingleOptionAlertWithoutTitle.ShowAlertDialog(
                                     ClockinoutActivity.this,
-                                    "LAFitnessApp", Msg.get(0).toString(),
+                                    getString(R.string.app_name), Msg.get(0).toString(),
                                     "Ok");
                         }
                     } catch (Exception e) {
@@ -1585,7 +1681,7 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                     }
                 } else {
                     SingleOptionAlertWithoutTitle.ShowAlertDialog(
-                            ClockinoutActivity.this, "LAFitnessApp",
+                            ClockinoutActivity.this,  getString(R.string.app_name),
                             "Please login again to clock in / out.", "OK");
                 }
             }
@@ -1599,7 +1695,6 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
         protected void onPreExecute() {
             // TODO Auto-generated method stub
             super.onPreExecute();
-
             pDialog = new ProgressDialog(ClockinoutActivity.this);
             pDialog.setTitle("Please wait...");
             pDialog.setMessage(Html.fromHtml("Loading data..."));
@@ -1633,8 +1728,7 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                 // service
                 SoapObject response = (SoapObject) envelope.getResponse();
                 SoapObject mSoapObject1 = (SoapObject) response.getProperty(0);
-                SoapObject mSoapObject2 = (SoapObject) mSoapObject1
-                        .getProperty(0);
+                SoapObject mSoapObject2 = (SoapObject) mSoapObject1.getProperty(0);
                 String code = mSoapObject2.getPropertyAsString(0).toString();
                 Log.i("Code", code);
                 if (code.equals("000")) {
@@ -1700,7 +1794,7 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                                     ClockinoutActivity.this);
                             alertDialogBuilder.setCancelable(false);
                             // set title
-                            alertDialogBuilder.setTitle("LAFitnessApp");
+                            alertDialogBuilder.setTitle(getString(R.string.app_name));
                             alertDialogBuilder.setIcon(getResources()
                                     .getDrawable(R.drawable.ic_launcher));
 
@@ -1709,28 +1803,24 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
                                     .setMessage(processMsg)
                                     .setCancelable(false)
                                     .setPositiveButton(
-                                            "Ok",
-                                            new DialogInterface.OnClickListener() {
-                                                public void onClick(
-                                                        DialogInterface dialog,
-                                                        int id) {
+                                            "Ok", new DialogInterface.OnClickListener() {
+                                                public void onClick(DialogInterface dialog, int id) {
                                                     recreate();
                                                 }
                                             });
 
                             // create alert dialog
-                            AlertDialog alertDialog = alertDialogBuilder
-                                    .create();
+                            AlertDialog alertDialog = alertDialogBuilder.create();
 
                             // show it
                             alertDialog.show();
                         }
-                    } else {
+                    } else if (whatclick == 2) {
                         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                                 ClockinoutActivity.this);
                         alertDialogBuilder.setCancelable(false);
                         // set title
-                        alertDialogBuilder.setTitle("LAFitnessApp");
+                        alertDialogBuilder.setTitle(getString(R.string.app_name));
                         alertDialogBuilder.setIcon(getResources()
                                 .getDrawable(R.drawable.ic_launcher));
 
@@ -1754,12 +1844,83 @@ public class ClockinoutActivity extends Activity implements View.OnClickListener
 
                         // show it
                         alertDialog.show();
+                    }else if(whatclick == 1) {
+                        if (clockInTypeStr.equalsIgnoreCase("0")) {
+                            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                                    ClockinoutActivity.this);
+                            alertDialogBuilder.setCancelable(false);
+                            // set title
+                            alertDialogBuilder.setTitle(getString(R.string.app_name));
+                            alertDialogBuilder.setIcon(getResources()
+                                    .getDrawable(R.drawable.ic_launcher));
+
+                            // set dialog message
+                            alertDialogBuilder
+                                    .setMessage(processMsg)
+                                    .setCancelable(false)
+                                    .setPositiveButton(
+                                            "Ok",
+                                            new DialogInterface.OnClickListener() {
+                                                public void onClick(
+                                                        DialogInterface dialog,
+                                                        int id) {
+                                                    recreate();
+                                                }
+                                            });
+
+                            // create alert dialog
+                            AlertDialog alertDialog = alertDialogBuilder
+                                    .create();
+
+                            // show it
+                            alertDialog.show();
+
+                        } else {
+                            AlertReasonDialog();
+                        }
+                        clockInTypeStr = "0";
+
+                    } else if(whatclick == 3){
+                        if (clockInForBreakStr.equalsIgnoreCase("0")) {
+                            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                                    ClockinoutActivity.this);
+                            alertDialogBuilder.setCancelable(false);
+                            // set title
+                            alertDialogBuilder.setTitle(getString(R.string.app_name));
+                            alertDialogBuilder.setIcon(getResources()
+                                    .getDrawable(R.drawable.ic_launcher));
+
+                            // set dialog message
+                            alertDialogBuilder
+                                    .setMessage(processMsg)
+                                    .setCancelable(false)
+                                    .setPositiveButton(
+                                            "Ok",
+                                            new DialogInterface.OnClickListener() {
+                                                public void onClick(DialogInterface dialog, int id) {
+                                                    recreate();
+                                                }
+                                            });
+
+                            // create alert dialog
+                            AlertDialog alertDialog = alertDialogBuilder
+                                    .create();
+
+                            // show it
+                            alertDialog.show();
+
+                        } else {
+                            AlertDialogMsgForClockInBreakEarly();
+                        }
+                        clockInForBreakStr = "0";
+
+                    }else{
+                        AlertReasonDialog();
                     }
 
+
                 } else {
-                    SingleOptionAlertWithoutTitle.ShowAlertDialog(
-                            ClockinoutActivity.this, "LAFitnessApp",
-                            "please login again to clock in / out.", "Ok");
+                    SingleOptionAlertWithoutTitle.ShowAlertDialog(ClockinoutActivity.this, getString(R.string.app_name), "please login again to clock in / out.", "Ok");
                 }
             }
 

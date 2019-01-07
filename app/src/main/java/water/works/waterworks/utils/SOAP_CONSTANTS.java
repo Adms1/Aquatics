@@ -84,8 +84,7 @@ public class SOAP_CONSTANTS {
     public static String SOAP_Action_EmpComLog_Delete_EmpComLogDetails = "http://tempuri.org/EmpComLog_Delete_EmpComLogDetails";
     public static String SOAP_Action_GetISAAlert = "http://tempuri.org/GetISAAlert";
     public static String SOAP_Action_SaveStudentImage = "http://tempuri.org/SaveStudentImage";
-    public static String GetAttendanceList_Multiple_Action = NAMESPACE
-            + "GetAttendanceList_Multiple";
+    public static String GetAttendanceList_Multiple_Action = NAMESPACE + "GetAttendanceList_Multiple";
     public static String GetAttendanceList_Multiple_Front_Action = NAMESPACE + "GetAttendanceList_Multiple_Front";
     public static String Insert_Attandance_Action = NAMESPACE
             + "Insert_Attandance_LA";
